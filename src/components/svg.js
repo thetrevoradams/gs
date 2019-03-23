@@ -12,9 +12,9 @@ const Send = ({ scale, color }) => (
     <path
       d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
       stroke={color}
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -29,9 +29,9 @@ const Phone = ({ scale, color }) => (
     <path
       d="M22.001 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.501 19.501 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.111 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.908.338 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"
       stroke={color}
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -43,7 +43,7 @@ const Hamburger = ({ scale, color }) => (
     xmlns="http://www.w3.org/2000/svg"
     style={{ transform: `scale(${scale}, ${scale})` }}
   >
-    <path stroke={color} stroke-width="2" d="M0 1h35M0 13h35" />
+    <path stroke={color} strokeWidth="2" d="M0 1h35M0 13h35" />
   </svg>
 )
 const Email = ({ scale, color }) => (
@@ -57,16 +57,16 @@ const Email = ({ scale, color }) => (
     <path
       d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
       stroke={color}
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M22 6l-10 7L2 6"
       stroke={color}
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -81,9 +81,9 @@ const Download = ({ scale, color }) => (
     <path
       d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -98,9 +98,9 @@ const Dalla = ({ scale, color }) => (
     <path
       d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -114,7 +114,7 @@ const CloseX = ({ scale, color }) => (
   >
     <path
       stroke={color}
-      stroke-width="2"
+      strokeWidth="2"
       d="M1.293 20.293L20.516 1.07M1.293 1.707l19.223 19.224"
     />
   </svg>
@@ -130,9 +130,9 @@ const ChevronsRight = ({ scale, color }) => (
     <path
       d="M13 17l5-5-5-5M6 17l5-5-5-5"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -147,9 +147,9 @@ const ChevronRight = ({ scale, color }) => (
     <path
       d="M9 17.5l5-5-5-5"
       stroke={color}
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -164,9 +164,9 @@ const Checkmark = ({ scale, color }) => (
     <path
       d="M16.667 5l-9.166 9.167L3.334 10"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -181,9 +181,9 @@ const Barchart = ({ scale, color }) => (
     <path
       d="M12 20V10M18 20V4M6 20v-4"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -198,16 +198,16 @@ const Award = ({ scale, color }) => (
     <path
       d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -222,9 +222,9 @@ const ArrowRight = ({ scale, color }) => (
     <path
       d="M16.375 18.333L25 10l-8.625-8.333M2 10h23"
       stroke={color}
-      stroke-width="3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -239,9 +239,9 @@ const Activity = ({ scale, color }) => (
     <path
       d="M22 12h-4l-3 9L9 3l-3 9H2"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )

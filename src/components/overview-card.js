@@ -10,6 +10,7 @@ const wrapper = css`
   padding: 20px;
   font-size: 14px;
   max-width: 330px;
+  margin: 10px;
   height: 485px;
   position: relative;
 `
