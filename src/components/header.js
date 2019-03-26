@@ -28,7 +28,7 @@ const noLinkStyles = css`
 const Header = () => (
   <header>
     <nav css={navStyles}>
-      <Link to="/" css={noLinkStyles}>
+      <Link to="/about-us" css={noLinkStyles}>
         <span>About</span>
       </Link>
       <Link to="/" css={noLinkStyles}>
@@ -37,10 +37,10 @@ const Header = () => (
       <Link to="/">
         <Svg icon="Logo" />
       </Link>
-      <Link to="/" css={noLinkStyles}>
+      <Link to="/management/" css={noLinkStyles}>
         <span>Management</span>
       </Link>
-      <Link to="/" css={noLinkStyles}>
+      <Link to="/contact" css={noLinkStyles}>
         <span>Contact</span>
       </Link>
     </nav>

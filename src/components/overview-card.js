@@ -71,6 +71,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
         'We manage your judgment portfolio through all phases of the process from locating the judgment to collecting the final payment.',
       option:
         'Best option if you have limited resources and staffing in your collection/special assets department.',
+      link: '/we-manage/',
     },
     youManage: {
       title: 'YOU MANAGE',
@@ -79,6 +80,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
         'You license the proprietary Guaranty Solutions Judgment Management System but perform your own research and collection efforts.',
       option:
         'Best option if you have the required resources and staffing in your collection/special assets department.',
+      link: '/you-manage/',
     },
     wePurchase: {
       title: 'WE PURCHASE',
@@ -86,6 +88,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
       desc:
         'We will purchase the portfolio of judgments you are selling at a negotiated market rate.',
       option: 'Best option for fastest revenue realization.',
+      link: '/we-purchase/',
     },
   }
 
@@ -113,7 +116,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
       <div css={desc}>{config[type].desc}</div>
       <div css={option}>{config[type].option}</div>
       <div css={learnMore}>
-        <Link to="/page-2/" style={{ color: config[type].color }}>
+        <Link to={config[type].link} style={{ color: config[type].color }}>
           <span>LEARN MORE</span>
           <Svg icon="ChevronRight" color={config[type].color} />
         </Link>
