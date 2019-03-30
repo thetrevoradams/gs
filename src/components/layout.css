@@ -617,6 +617,22 @@ pre tt:after {
   color: #dc7f0d !important;
   border-bottom: 2px solid #dc7f0d !important;
 }
+.flex {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap
+}
+.center {
+  justify-content: center
+}
+
 
 @media only screen and (max-width: 480px) {
   html {
