@@ -1,33 +1,38 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 import { Link } from 'gatsby'
+import Image from './image'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import Svg from './svg'
 
 const headerStyles = css`
-  padding: 25px 10px;
+  position: relative;
   color: #fdfdfd;
   font-size: 18px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.8) -9.48%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  height: calc(68vh - 125px);
 
   a {
     align-self: center;
   }
 `
 const navStyles = css`
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 25px 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-content: center;
   font-weight: 500;
   margin: 0 auto;
-  max-width: 1400px;
-
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) -9.48%,
+    rgba(0, 0, 0, 0) 100%
+  );
   a {
     align-self: center;
   }
@@ -64,9 +69,15 @@ const mobileLogo = css`
 `
 
 const Header = ({ lightBackground = false }) => {
-  const bkg = lightBackground ? '#fff' : '#545454'
+  let styleOverride = { backgroundColor: 'initial' };
+  if (!lightBackground) {
+    styleOverride = {
+      backgroundColor: '#545454',
+      height: '125px'
+    }
+  }
   return (
-    <header css={headerStyles} style={{ backgroundColor: bkg }}>
+    <header css={headerStyles} style={styleOverride}>
       <nav css={navStyles}>
         <Link to="/about-us" css={noLinkStyles} activeClassName="activeLink">
           <span>About</span>
@@ -87,6 +98,7 @@ const Header = ({ lightBackground = false }) => {
           <Svg icon="Hamburger" color="#fff" />
         </Link>
       </nav>
+      {lightBackground ? <Image imgName="skyscrappers" altText="sky scrappers" /> : null}
     </header>
   )
 }

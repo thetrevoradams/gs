@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react' // eslint-disable-line no-unused-vars
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core'
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -13,21 +14,40 @@ import Img from 'gatsby-image'
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
+const imageStyling = css`
+  z-index: -10;
+  height: calc(70vh - 18px);
+`
+
+const overlay = css`
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -125px;
+  left: 0;
+  right: 0;
+  height: calc(70vh - 18px);
+  background: rgba(0,0,0,0.67);
+`
+
 const Image = () => (
-  // <StaticQuery
-  //   query={graphql`
-  //     query {
-  //       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-  //         childImageSharp {
-  //           fluid(maxWidth: 300) {
-  //             ...GatsbyImageSharpFluid
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `}
-  //   render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
-  // />
-  <div>image placeholder</div>
+  <StaticQuery
+    query={graphql`
+      query {
+        skyscrappers: file(relativePath: { eq: "skyscrappers.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 2000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <div css={overlay}>
+        <Img fluid={data.skyscrappers.childImageSharp.fluid} css={imageStyling} />
+      </div>
+    )}
+  />
 )
 export default Image
