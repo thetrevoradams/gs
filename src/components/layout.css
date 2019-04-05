@@ -567,14 +567,7 @@ th {
   padding-top: 0.725rem;
   padding-bottom: calc(0.725rem - 1px);
 }
-th:first-child,
-td:first-child {
-  padding-left: 0;
-}
-th:last-child,
-td:last-child {
-  padding-right: 0;
-}
+
 tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
@@ -627,12 +620,11 @@ pre tt:after {
   flex-direction: column;
 }
 .wrap {
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 .center {
-  justify-content: center
+  justify-content: center;
 }
-
 
 @media only screen and (max-width: 480px) {
   html {
