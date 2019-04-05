@@ -29,6 +29,42 @@ const wrapper = css`
   tr th:last-child {
     border-right: 1px solid #e5e5e5;
     border-top-right-radius: 10px;
+    color: rgba(62, 173, 156, 1);
+    background-color: rgba(62, 173, 156, 0.2);
+    border-top-color: rgba(62, 173, 156, 1);
+    border-right-color: rgba(62, 173, 156, 1);
+  }
+
+  tr td:last-child {
+    color: rgba(62, 173, 156, 1);
+    background-color: rgba(62, 173, 156, 0.2);
+    border-right-color: rgba(62, 173, 156, 1);
+    border-left: none;
+  }
+
+  tr td:nth-child(2),
+  tr th:nth-child(2) {
+    background-color: rgba(220, 127, 13, 0.2);
+    border-left-color: #dc7f0d;
+    color: #dc7f0d;
+    text-align: center;
+  }
+
+  tr th:nth-child(2) {
+    border-top-color: #dc7f0d;
+  }
+
+  tr td:nth-child(3),
+  tr th:nth-child(3) {
+    background-color: rgba(52, 148, 209, 0.2);
+    color: rgba(52, 148, 209, 1);
+    border-left-color: rgba(52, 148, 209, 1);
+    border-right: 1px solid rgba(52, 148, 209, 1);
+  }
+
+  tr th:nth-child(3) {
+    border-right-color: rgba(52, 148, 209, 1);
+    border-top-color: rgba(52, 148, 209, 1);
   }
 
   th {
@@ -43,13 +79,23 @@ const wrapper = css`
   td {
     font-size: 12px;
     border-left: 1px solid #e5e5e5;
-    padding: 5px;
+    padding: 5px 10px;
   }
 
   td:nth-child(2),
   td:nth-child(3),
   td:nth-child(4) {
     width: 120px;
+    position: relative;
+    text-align: center;
+  }
+
+  td:nth-child(2) svg,
+  td:nth-child(3) svg,
+  td:nth-child(4) svg {
+    position: absolute;
+    bottom: 2px;
+    left: calc(50% - 7px);
   }
 
   .rowHeader {
@@ -106,8 +152,12 @@ const Comparison = () => (
             Judgment database
           </span>
         </td>
-        <td />
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
+        <td>
+          <Svg icon="Checkmark" color="rgba(52, 148, 209, 1)" />
+        </td>
         <td />
       </tr>
       <tr>
@@ -117,8 +167,12 @@ const Comparison = () => (
             Links to relavent documents
           </span>
         </td>
-        <td />
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
+        <td>
+          <Svg icon="Checkmark" color="rgba(52, 148, 209, 1)" />
+        </td>
         <td />
       </tr>
       <tr>
@@ -128,8 +182,12 @@ const Comparison = () => (
             Judgment & lien expiration tracking
           </span>
         </td>
-        <td />
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
+        <td>
+          <Svg icon="Checkmark" color="rgba(52, 148, 209, 1)" />
+        </td>
         <td />
       </tr>
       <tr>
@@ -139,15 +197,21 @@ const Comparison = () => (
             Individual debtor data management
           </span>
         </td>
-        <td />
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
+        <td>
+          <Svg icon="Checkmark" color="rgba(52, 148, 209, 1)" />
+        </td>
         <td />
       </tr>
       <tr>
         <td>
           <span className="rowHeader">Judgment research and acquisition</span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -157,7 +221,9 @@ const Comparison = () => (
             Judgment expiration monitoring and renewal
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -167,7 +233,9 @@ const Comparison = () => (
             Real and personal property lien monitoring and renewal
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -179,7 +247,9 @@ const Comparison = () => (
             Bank Accounts
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -190,7 +260,9 @@ const Comparison = () => (
             Employment
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -201,7 +273,9 @@ const Comparison = () => (
             Property ownership
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -212,7 +286,9 @@ const Comparison = () => (
             Related business
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -223,7 +299,9 @@ const Comparison = () => (
             Subpoena targets
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -234,7 +312,9 @@ const Comparison = () => (
             Likelihood of bankruptcy
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -245,7 +325,9 @@ const Comparison = () => (
             Additional judgments
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -256,7 +338,9 @@ const Comparison = () => (
             Forensic accounting
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -268,7 +352,9 @@ const Comparison = () => (
             Bank account and wage garnishment
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -279,7 +365,9 @@ const Comparison = () => (
             Charging orders
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -290,7 +378,9 @@ const Comparison = () => (
             Debtor’s exams
           </span>
         </td>
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="#dc7f0d" />
+        </td>
         <td />
         <td />
       </tr>
@@ -300,15 +390,17 @@ const Comparison = () => (
         </td>
         <td />
         <td />
-        <td />
+        <td>
+          <Svg icon="Checkmark" color="rgba(62, 173, 156, 1)" />
+        </td>
       </tr>
       <tr css={bottomRow}>
         <td>
           <span className="rowHeader">Upfront cost</span>
         </td>
-        <td />
-        <td />
-        <td />
+        <td>No Cost </td>
+        <td>Based on value of portfolio</td>
+        <td>No Cost</td>
       </tr>
     </table>
   </div>
