@@ -22,10 +22,16 @@ const comparisonChart = css`
   .desktop {
     display: block;
   }
+  .mobile {
+    display: none;
+  }
 
   @media (max-width: 767px) {
     .desktop {
       display: none;
+    }
+    .mobile {
+      display: block;
     }
   }
 `
