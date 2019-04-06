@@ -7,11 +7,6 @@ const wrapper = css`
   max-width: 800px;
   margin: auto;
 
-  h2 {
-    text-align: center;
-    margin: 50px 0px;
-  }
-
   table {
     border-collapse: separate;
     border-spacing: 0px;
@@ -129,8 +124,6 @@ const bottomRow = css`
 
 const Comparison = () => (
   <div css={wrapper}>
-    <h2>COMPARISON</h2>
-
     <table>
       <tr>
         <th style={{ border: 'none' }} />

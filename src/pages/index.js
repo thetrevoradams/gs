@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OverviewCard from '../components/overview-card'
 import Comparison from '../components/comparison'
+import MobileCompare from '../components/mobile-compare'
 
 const tagLine = css`
   width: 100%;
@@ -15,6 +16,18 @@ const tagLine = css`
   text-align: center;
   text-transform: capitalize;
   margin-bottom: 30px;
+`
+
+const comparisonChart = css`
+  .desktop {
+    display: block;
+  }
+
+  @media (max-width: 767px) {
+    .desktop {
+      display: none;
+    }
+  }
 `
 
 const IndexPage = () => (
@@ -35,7 +48,23 @@ const IndexPage = () => (
           <OverviewCard type="youManage" />
           <OverviewCard type="wePurchase" />
         </div>
-        <Comparison />
+        <div css={comparisonChart}>
+          <h2
+            style={{
+              margin: '50px 0px',
+              textAlign: 'center',
+              fontWeight: 300,
+            }}
+          >
+            COMPARISON
+          </h2>
+          <div className="desktop">
+            <Comparison />
+          </div>
+          <div className="mobile">
+            <MobileCompare />
+          </div>
+        </div>
       </main>
     </Layout>
   </>
