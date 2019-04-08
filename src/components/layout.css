@@ -600,7 +600,7 @@ pre tt:after {
   border-bottom: 10px solid #dc7f0d;
 }
 .spacer {
-  margin: 1.45rem;
+  margin: 2.5rem 1.45rem 5rem 1.45rem;
 }
 .textContainer {
   max-width: 750px;
