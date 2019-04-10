@@ -8,7 +8,6 @@ const wrapper = css`
   border: 1px solid black;
   border-radius: 6px;
   padding: 20px;
-  font-size: 14px;
   max-width: 330px;
   margin: 10px;
   height: 485px;
@@ -26,19 +25,21 @@ const h3Style = css`
 
 const desc = css`
   text-align: center;
+  font-size: 16px;
 `
 
 const option = css`
   color: #999999;
   position: absolute;
+  font-size: 14px;
   top: 250px;
-  padding-left: 40px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 10px;
 `
 
 const award = css`
   position: absolute;
-  left: 22px;
+  left: 14px;
   top: 255px;
 `
 

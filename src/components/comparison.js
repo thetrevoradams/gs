@@ -72,7 +72,7 @@ const wrapper = css`
   }
 
   td {
-    font-size: 12px;
+    font-size: 14px;
     border-left: 1px solid #e5e5e5;
     padding: 5px 10px;
   }
@@ -96,8 +96,9 @@ const wrapper = css`
   .rowHeader {
     font-weight: bold;
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 5px;
+    padding-bottom: 5px;
   }
 
   .rowSub {
