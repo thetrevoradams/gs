@@ -9,7 +9,7 @@ import Svg from '../components/svg'
 const bulletStyles = css`
   display: flex;
   flex-direction: row;
-  margin: 0 0 10px 20px;
+  margin: 0 0 15px 20px;
 
   & svg:first-of-type {
     margin-right: 12px;
