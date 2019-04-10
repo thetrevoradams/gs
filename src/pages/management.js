@@ -7,7 +7,7 @@ const Management = () => (
   <Layout>
     <SEO title="Management" />
     <main className="textContainer">
-      <h1>Management</h1>
+      <h2>Management</h2>
       <p>Placeholder</p>
     </main>
   </Layout>

@@ -1,4 +1,4 @@
-import React from 'react'  // eslint-disable-line no-unused-vars
+import React from 'react' // eslint-disable-line no-unused-vars
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
@@ -10,6 +10,25 @@ const navStyles = css`
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    justify-content: center;
+    div:first-of-type {
+      margin: 0 auto;
+    }
+    div:last-of-type {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      * {
+        margin: 15px 15px 0 15px;
+      }
+    }
+  }
 `
 const titleStyles = css`
   flex: 1;

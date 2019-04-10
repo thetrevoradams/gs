@@ -19,18 +19,74 @@ const getSubNavData = subNav => {
     case 'weManage':
       navTitle = 'We Manage'
       links = [
-        <Link key={1} to="/we-manage/">Identification</Link>,
-        <Link key={2} to="/we-manage/protection">Protection</Link>,
-        <Link key={3} to="/we-manage/maximize">Maximize</Link>,
+        <Link
+          activeClassName="activeSubLink"
+          className="subNavLink"
+          style={{ color: 'var(--orange-color)' }}
+          key={1}
+          to="/we-manage/"
+        >
+          Identification
+        </Link>,
+        <Link
+          activeClassName="activeSubLink"
+          className="subNavLink"
+          style={{ color: 'var(--orange-color)' }}
+          key={2}
+          to="/we-manage/protection"
+        >
+          Protection
+        </Link>,
+        <Link
+          activeClassName="activeSubLink"
+          className="subNavLink"
+          style={{ color: 'var(--orange-color)' }}
+          key={3}
+          to="/we-manage/maximize"
+        >
+          Maximize
+        </Link>,
       ]
       break
     case 'youManage':
       navTitle = 'You Manage'
       links = [
-        <Link key={4} to="/you-manage/">Overview</Link>,
-        <Link key={5} to="/you-manage/protection">Protection</Link>,
-        <Link key={6} to="/you-manage/access">Access</Link>,
-        <Link key={7} to="/you-manage/efficiency">Efficiency</Link>,
+        <Link
+          activeClassName="activeSubLink"
+          className="subNavLink"
+          style={{ color: 'var(--blue-color)' }}
+          key={4}
+          to="/you-manage/"
+        >
+          Overview
+        </Link>,
+        <Link
+          activeClassName="activeSubLink"
+          className="subNavLink"
+          style={{ color: 'var(--blue-color)' }}
+          key={5}
+          to="/you-manage/protection"
+        >
+          Protection
+        </Link>,
+        <Link
+          activeClassName="activeSubLink"
+          className="subNavLink"
+          style={{ color: 'var(--blue-color)' }}
+          key={6}
+          to="/you-manage/access"
+        >
+          Access
+        </Link>,
+        <Link
+          activeClassName="activeSubLink"
+          className="subNavLink"
+          style={{ color: 'var(--blue-color)' }}
+          key={7}
+          to="/you-manage/efficiency"
+        >
+          Efficiency
+        </Link>,
       ]
       break
     case 'wePurchase':

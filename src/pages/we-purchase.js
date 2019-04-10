@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -7,9 +6,10 @@ import SEO from '../components/seo'
 const WePurchase = () => (
   <Layout subNav="wePurchase">
     <SEO title="We Purchase" />
-    <h1>We Purchase</h1>
-    <p>Welome</p>
-    <Link to="/">Go back to the homepage</Link>
+    <main className="textContainer">
+      <h2 className='greenColor'>Judgment Purchase</h2>
+      <p>Whether you would like to sell your entire portfolio or a limited number of judgments, we will provide you with a proposal for purchase based upon current market rates for comparable judgments.</p>
+    </main>
   </Layout>
 )
 

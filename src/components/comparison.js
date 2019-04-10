@@ -40,13 +40,13 @@ const wrapper = css`
   tr td:nth-of-type(2),
   tr th:nth-of-type(2) {
     background-color: rgba(220, 127, 13, 0.2);
-    border-left-color: #dc7f0d;
-    color: #dc7f0d;
+    border-left-color: var(--orange-color);
+    color: var(--orange-color);
     text-align: center;
   }
 
   tr th:nth-of-type(2) {
-    border-top-color: #dc7f0d;
+    border-top-color: var(--orange-color);
   }
 
   tr td:nth-of-type(3),
@@ -147,7 +147,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td>
             <Svg icon="Checkmark" color="rgba(52, 148, 209, 1)" />
@@ -162,7 +162,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td>
             <Svg icon="Checkmark" color="rgba(52, 148, 209, 1)" />
@@ -177,7 +177,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td>
             <Svg icon="Checkmark" color="rgba(52, 148, 209, 1)" />
@@ -192,7 +192,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td>
             <Svg icon="Checkmark" color="rgba(52, 148, 209, 1)" />
@@ -204,7 +204,7 @@ const Comparison = () => (
             <span className="rowHeader">Judgment research and acquisition</span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -216,7 +216,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -228,7 +228,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -242,7 +242,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -255,7 +255,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -268,7 +268,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -281,7 +281,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -294,7 +294,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -307,7 +307,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -320,7 +320,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -333,7 +333,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -347,7 +347,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -360,7 +360,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />
@@ -373,7 +373,7 @@ const Comparison = () => (
             </span>
           </td>
           <td>
-            <Svg icon="Checkmark" color="#dc7f0d" />
+            <Svg icon="Checkmark" color="var(--orange-color)" />
           </td>
           <td />
           <td />

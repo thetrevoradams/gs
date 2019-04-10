@@ -66,7 +66,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
   const config = {
     weManage: {
       title: 'WE MANAGE',
-      color: '#DC7F0D',
+      color: 'var(--orange-color)',
       desc:
         'We manage your judgment portfolio through all phases of the process from locating the judgment to collecting the final payment.',
       option:
@@ -75,7 +75,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
     },
     youManage: {
       title: 'YOU MANAGE',
-      color: '#3494D1',
+      color: 'var(--blue-color)',
       desc:
         'You license the proprietary Guaranty Solutions Judgment Management System but perform your own research and collection efforts.',
       option:
@@ -84,7 +84,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
     },
     wePurchase: {
       title: 'WE PURCHASE',
-      color: '#3EAD9C',
+      color: 'var(--green-color)',
       desc:
         'We will purchase the portfolio of judgments you are selling at a negotiated market rate.',
       option: 'Best option for fastest revenue realization.',

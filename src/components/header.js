@@ -44,7 +44,7 @@ const noLinkStyles = css`
   transition: all 0.25s ease-in-out;
 
   &:hover {
-    color: #dc7f0d;
+    color: var(--orange-color);
   }
   @media (max-width: 975px) {
     display: none;
