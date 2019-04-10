@@ -4,7 +4,7 @@ import { jsx, css } from '@emotion/core'
 import Svg from './svg'
 
 const wrapper = css`
-  max-width: 400px;
+  max-width: 330px;
   margin: auto;
 
   .title {
