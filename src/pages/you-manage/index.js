@@ -5,7 +5,7 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 
 const YouManage = () => (
-  <Layout>
+  <Layout subNav='youManage'>
     <SEO title="Overview - You Manage" />
     <h1>You Manage</h1>
     <p>Welcome to page 2</p>

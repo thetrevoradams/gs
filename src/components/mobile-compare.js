@@ -114,19 +114,19 @@ const MobileCompare = () => {
               GS Judgment Management System
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Judgment database
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Links relevant documents
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Judgment & lien expiration
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Individual debtor data management
             </div>
           </div>
@@ -149,35 +149,35 @@ const MobileCompare = () => {
               Debtor specific research
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Bank accounts
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Employment
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Property ownership
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Related business
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Subpoena targets
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Likelihood of bankruptcy
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Additional judgments
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Forensic accounting
             </div>
           </div>
@@ -187,23 +187,23 @@ const MobileCompare = () => {
               Collection Actions
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Bank account and wage
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Garishment
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Charging orders
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Debtor's exams
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Foreclosure action
             </div>
           </div>
@@ -221,19 +221,19 @@ const MobileCompare = () => {
               GS Judgment Management System
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Judgment Database
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Link relevant documents
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Judgment & lien expiration tracking
             </div>
             <div className="rowSub">
-              <Svg icon="ChevronsRight" color="#9F9C99" scale=".8" />
+              <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
               Individual debtor data management
             </div>
           </div>

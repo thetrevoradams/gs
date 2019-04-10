@@ -4,13 +4,13 @@ import { Link } from 'gatsby'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 
-const YouProtection = () => (
-  <Layout>
-    <SEO title="Protection - You Manage" />
-    <h1>You Protection</h1>
+const WeMaximize = () => (
+  <Layout subNav='weManage'>
+    <SEO title="Protection - We Maximize" />
+    <h1>We Manage - Maximize</h1>
     <p>Welcome to page 2</p>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
 
-export default YouProtection
+export default WeMaximize
