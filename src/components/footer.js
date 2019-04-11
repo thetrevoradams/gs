@@ -5,11 +5,25 @@ import { Link } from 'gatsby'
 import { jsx, css } from '@emotion/core'
 
 const wrapper = css`
-  display: flex;
   background-color: #272323;
   width: 100%;
-  justify-content: space-around;
-  padding: 50px 0px;
+
+  .desktop,
+  .mobile {
+    justify-content: space-around;
+    padding: 50px 0px;
+    margin: auto;
+  }
+
+  .desktop {
+    display: flex;
+    max-width: 1000px;
+  }
+
+  .mobile {
+    display: none;
+    max-width: 500px;
+  }
 
   strong a {
     margin-bottom: 20px;
@@ -17,6 +31,7 @@ const wrapper = css`
   }
   span a {
     margin: 10px 0px;
+    display: block;
   }
 
   a {
@@ -25,63 +40,100 @@ const wrapper = css`
     font-size: 14px;
     cursor: pointer;
   }
+
+  @media (max-width: 767px) {
+    .desktop {
+      display: none;
+    }
+
+    .mobile {
+      display: flex;
+    }
+  }
 `
 
 const Footer = () => {
   return (
     <div css={wrapper}>
-      <div className="column">
-        <strong>
-          <Link to="/we-manage/">WE MANAGE</Link>
-        </strong>
-        <span>
-          <Link to="/management/">Identification</Link>
-        </span>
-        <span>
-          <Link to="/management/">Protection</Link>
-        </span>
-        <span>
-          <Link to="/management/">Maximize</Link>
-        </span>
+      <div className="desktop">
+        <div className="column">
+          <strong>
+            <Link to="/we-manage/">WE MANAGE</Link>
+          </strong>
+          <span>
+            <Link to="/we-manage/">Identification</Link>
+          </span>
+          <span>
+            <Link to="/we-manage/protection">Protection</Link>
+          </span>
+          <span>
+            <Link to="/we-manage/maximize">Maximize</Link>
+          </span>
+        </div>
+        <div className="column">
+          <strong>
+            <Link to="/you-manage/">YOU MANAGE</Link>
+          </strong>
+          <span>
+            <Link to="/you-manage/">Overview</Link>
+          </span>
+          <span>
+            <Link to="/you-manage/protection">Protection</Link>
+          </span>
+          <span>
+            <Link to="/you-manage/access">Access</Link>
+          </span>
+          <span>
+            <Link to="/you-manage/efficiency">Efficiency</Link>
+          </span>
+        </div>
+        <div className="column">
+          <strong>
+            <Link to="/we-purchase/">WE PURCHASE</Link>
+          </strong>
+          <span>
+            <Link to="/we-purchase/">Overview</Link>
+          </span>
+        </div>
+        <div className="column">
+          <strong>
+            <Link to="/contact/">RESOURCES</Link>
+          </strong>
+          <span>
+            <Link to="/contact/">Contact</Link>
+          </span>
+          <span>
+            <Link to="/about/">About</Link>
+          </span>
+          <span>
+            <Link to="/management/">Management</Link>
+          </span>
+        </div>
       </div>
-      <div className="column">
-        <strong>
-          <Link>YOU MANAGE</Link>
-        </strong>
-        <span>
-          <Link>Overview</Link>
-        </span>
-        <span>
-          <Link>Protection</Link>
-        </span>
-        <span>
-          <Link>Access</Link>
-        </span>
-        <span>
-          <Link>Efficiency</Link>
-        </span>
-      </div>
-      <div className="column">
-        <strong>
-          <Link>WE PURCHASE</Link>
-        </strong>
-        <span>
-          <Link>Overview</Link>
-        </span>
-      </div>
-      <div className="column">
-        <strong>
-          <Link>RESOURCES</Link>
-        </strong>
-        <span>
-          <Link>Contact</Link>
-        </span>
-        <span>
-          <Link>About</Link>
-        </span>
-        <span>
-          <Link>Management</Link>
-        </span>
+      <div className="mobile">
+        <div className="column">
+          <span>
+            <Link to="/we-manage/">WE MANAGE</Link>
+          </span>
+          <span>
+            <Link to="/you-manage/">YOU MANAGE</Link>
+          </span>
+          <span>
+            <Link to="/we-purchase/">WE PURCHASE</Link>
+          </span>
+        </div>
+        >
+        <div className="column">
+          <span>
+            <Link to="/contact/">CONTACT</Link>
+          </span>
+          <span>
+            <Link to="/about/">ABOUT</Link>
+          </span>
+          <span>
+            <Link to="/management/">MANAGEMENT</Link>
+          </span>
+        </div>
       </div>
     </div>
   )
