@@ -16,6 +16,45 @@ const headerStyles = css`
     align-self: center;
   }
 `
+const heroTextContainer = css`
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  right: 10px;
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    font-size: 65px;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: 300;
+    margin-top: 20px;
+  }
+  @media (max-width: 690px) {
+    h1 {
+      font-size: 3.3rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (max-width: 660px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  @media (max-width: 580px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+`
 const navStyles = css`
   z-index: 10;
   position: absolute;
@@ -44,7 +83,7 @@ const noLinkStyles = css`
   transition: all 0.25s ease-in-out;
 
   &:hover {
-    color: #dc7f0d;
+    color: var(--orange-color);
   }
   @media (max-width: 975px) {
     display: none;
@@ -69,11 +108,11 @@ const mobileLogo = css`
 `
 
 const Header = ({ lightBackground = false }) => {
-  let styleOverride = { backgroundColor: 'initial' };
+  let styleOverride = { backgroundColor: 'initial' }
   if (!lightBackground) {
     styleOverride = {
       backgroundColor: '#545454',
-      height: '125px'
+      height: '125px',
     }
   }
   return (
@@ -98,7 +137,15 @@ const Header = ({ lightBackground = false }) => {
           <Svg icon="Hamburger" color="#fff" />
         </Link>
       </nav>
-      {lightBackground ? <Image imgName="skyscrappers" altText="sky scrappers" /> : null}
+      {lightBackground ? (
+        <>
+          <Image imgName="skyscrappers" altText="sky scrappers" />
+          <div css={heroTextContainer}>
+            <h1>The Leading Expert</h1>
+            <h2>in Judgment Portfolio Management</h2>
+          </div>
+        </>
+      ) : null}
     </header>
   )
 }

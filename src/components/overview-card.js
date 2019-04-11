@@ -8,7 +8,6 @@ const wrapper = css`
   border: 1px solid black;
   border-radius: 6px;
   padding: 20px;
-  font-size: 14px;
   max-width: 330px;
   margin: 10px;
   height: 485px;
@@ -26,19 +25,21 @@ const h3Style = css`
 
 const desc = css`
   text-align: center;
+  font-size: 16px;
 `
 
 const option = css`
   color: #999999;
   position: absolute;
+  font-size: 14px;
   top: 250px;
-  padding-left: 40px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 10px;
 `
 
 const award = css`
   position: absolute;
-  left: 22px;
+  left: 14px;
   top: 255px;
 `
 
@@ -66,7 +67,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
   const config = {
     weManage: {
       title: 'WE MANAGE',
-      color: '#DC7F0D',
+      color: 'var(--orange-color)',
       desc:
         'We manage your judgment portfolio through all phases of the process from locating the judgment to collecting the final payment.',
       option:
@@ -75,7 +76,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
     },
     youManage: {
       title: 'YOU MANAGE',
-      color: '#3494D1',
+      color: 'var(--blue-color)',
       desc:
         'You license the proprietary Guaranty Solutions Judgment Management System but perform your own research and collection efforts.',
       option:
@@ -84,7 +85,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
     },
     wePurchase: {
       title: 'WE PURCHASE',
-      color: '#3EAD9C',
+      color: 'var(--green-color)',
       desc:
         'We will purchase the portfolio of judgments you are selling at a negotiated market rate.',
       option: 'Best option for fastest revenue realization.',

@@ -280,7 +280,11 @@ const Logo = ({ scale }) => (
   </svg>
 )
 
-function Svg({ icon = 'ChevronRight', scale = 1, color = '#DC7F0D' } = {}) {
+function Svg({
+  icon = 'ChevronRight',
+  scale = 1,
+  color = 'var(--orange-color)',
+} = {}) {
   const components = {
     Send,
     Phone,
@@ -315,7 +319,7 @@ Svg.propTypes = {
 
 Svg.defaultProps = {
   scale: 1,
-  color: '#DC7F0D',
+  color: 'var(--orange-color)',
   icon: 'ChevronRight',
 }
 

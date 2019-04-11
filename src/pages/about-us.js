@@ -9,11 +9,11 @@ import Svg from '../components/svg'
 const bulletStyles = css`
   display: flex;
   flex-direction: row;
-  margin: 0 0 10px 20px;
+  margin: 0 0 15px 20px;
 
   & svg:first-of-type {
     margin-right: 12px;
-    min-width:24px;
+    min-width: 24px;
   }
 `
 
@@ -21,14 +21,14 @@ const topSpace = css`
   margin-top: 35px;
 `
 const orange = css`
-  color: #dc7f0d;
+  color: var(--orange-color);
 `
 
 const AboutUs = () => (
   <Layout>
     <SEO title="About Us" />
     <main className="textContainer">
-      <h1>About Us</h1>
+      <h2>About Us</h2>
       <p>
         Following the economic crisis of 2008, there was significant
         consolidation in the banking sector. As banks began managing the assets
@@ -56,21 +56,21 @@ const AboutUs = () => (
       <p css={topSpace}>Whether a client chooses to:</p>
       <div>
         <div css={bulletStyles}>
-          <Svg icon="ChevronsRight" color="#DC7F0D" />
+          <Svg icon="ChevronsRight" color="var(--orange-color)" />
           Have their judgment portfolio managed by Guaranty Solutions
         </div>
         <div css={bulletStyles}>
-          <Svg icon="ChevronsRight" color="#DC7F0D" />
+          <Svg icon="ChevronsRight" color="var(--orange-color)" />
           License the Guaranty Solutions Judgment Management System to manage
           their own portfolio
         </div>
         <div css={bulletStyles}>
-          <Svg icon="ChevronsRight" color="#DC7F0D" />
+          <Svg icon="ChevronsRight" color="var(--orange-color)" />
           Sell their judgment portfolio to Guaranty Solutions at prevailing
           market rates
         </div>
       </div>
-      <p style={{fontWeight: 500}} css={topSpace}>
+      <p style={{ fontWeight: 500 }} css={topSpace}>
         It is easy to see that we truly …{' '}
         <span css={orange}>Turn your write-offs into revenue!</span>
       </p>

@@ -7,7 +7,7 @@ const Contact = () => (
   <Layout>
     <SEO title="Contact" />
     <main className="textContainer">
-      <h1>Contact</h1>
+      <h2>Contact</h2>
       <p>Placeholder</p>
     </main>
   </Layout>
