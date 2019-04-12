@@ -53,6 +53,7 @@ const wrapper = css`
 `
 const sidebarStyles = css`
   flex-direction: column;
+  background-color: unset;
 
   .column {
     display: flex;
