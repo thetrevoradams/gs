@@ -8,10 +8,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
 import Header from './header'
 import SubNav from './sub-nav'
 import Footer from './footer'
+import 'semantic-ui-css/semantic.min.css'
 import './layout.css'
 
 const getSubNavData = subNav => {
@@ -104,7 +104,7 @@ const getSubNavData = subNav => {
 
 const Layout = ({ children, lightHeader = false, subNav }) => {
   return (
-    <>
+    <div className="pageWrapper">
       <Header lightBackground={lightHeader} />
       <div className="orangeLine" />
       {subNav ? getSubNavData(subNav) : null}
@@ -112,7 +112,7 @@ const Layout = ({ children, lightHeader = false, subNav }) => {
         <main>{children}</main>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
 

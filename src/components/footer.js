@@ -103,7 +103,7 @@ const Footer = () => {
             <Link to="/contact/">Contact</Link>
           </span>
           <span>
-            <Link to="/about/">About</Link>
+            <Link to="/about-us/">About</Link>
           </span>
           <span>
             <Link to="/management/">Management</Link>
@@ -128,7 +128,7 @@ const Footer = () => {
             <Link to="/contact/">CONTACT</Link>
           </span>
           <span>
-            <Link to="/about/">ABOUT</Link>
+            <Link to="/about-us/">ABOUT</Link>
           </span>
           <span>
             <Link to="/management/">MANAGEMENT</Link>

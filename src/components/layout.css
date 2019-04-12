@@ -1,7 +1,7 @@
 :root {
- --orange-color: #dc7f0d;
- --blue-color: #3494D1;
- --green-color: #3EAD9C;
+  --orange-color: #dc7f0d;
+  --blue-color: #3494d1;
+  --green-color: #3ead9c;
 }
 .orangeColor {
   color: var(--orange-color);
@@ -25,6 +25,30 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   letter-spacing: 0.08em;
+  font-size: 16px;
+}
+.pageWrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.ui.bottom.center.popup:before {
+  top: -0.4em;
+}
+.ui.popup:after {
+  position: absolute;
+  content: '';
+  top: -20px;
+  width: 100%;
+  left: 0;
+  height: 1em;
+  background: transparent;
+  z-index: 2;
+}
+.ui.popup:before {
+  width: 1em;
+  height: 1em;
+  border-radius: 4px;
 }
 .subNavLink {
   padding: 0 5px 5px 5px;
@@ -624,6 +648,7 @@ pre tt:after {
 }
 .spacer {
   margin: 2.5rem 1.45rem 5rem 1.45rem;
+  flex: 1;
 }
 .textContainer {
   max-width: 700px;

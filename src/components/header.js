@@ -1,6 +1,7 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 import { Link } from 'gatsby'
 import Image from './image'
+import { Popup } from 'semantic-ui-react'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
@@ -12,8 +13,31 @@ const headerStyles = css`
   font-size: 18px;
   height: calc(68vh - 125px);
 
-  a {
+  a,
+  .popUp {
     align-self: center;
+  }
+`
+const popUpOptions = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px;
+
+    span {
+      margin-left: 10px;
+    }
   }
 `
 const heroTextContainer = css`
@@ -108,6 +132,7 @@ const mobileLogo = css`
 `
 
 const Header = ({ lightBackground = false }) => {
+  const [popOverOpen, setPopOverOpen] = React.useState(false)
   let styleOverride = { backgroundColor: 'initial' }
   if (!lightBackground) {
     styleOverride = {
@@ -121,9 +146,35 @@ const Header = ({ lightBackground = false }) => {
         <Link to="/about-us" css={noLinkStyles} activeClassName="activeLink">
           <span>About</span>
         </Link>
-        <Link to="/" css={noLinkStyles}>
-          <span>Our Services</span>
-        </Link>
+        <Popup
+          trigger={
+            <span className="popUp" onMouseEnter={() => setPopOverOpen(true)}>
+              Our Services
+            </span>
+          }
+          flowing
+          on={['hover', 'click']}
+          position="bottom center"
+          hoverable
+          hideOnScroll
+          style={{ borderRadius: '5px' }}
+          open={popOverOpen}
+        >
+          <div css={popUpOptions} onMouseLeave={() => setPopOverOpen(false)}>
+            <Link to="/we-manage" css={noLinkStyles}>
+              <Svg icon="Barchart" color={'var(--orange-color)'} />
+              <span className="orangeColor">We Manage</span>
+            </Link>
+            <Link to="/you-manage" css={noLinkStyles}>
+              <Svg icon="Activity" color={'var(--blue-color)'} />
+              <span className="blueColor">You Manage</span>
+            </Link>
+            <Link to="/we-purchase" css={noLinkStyles}>
+              <Svg icon="Dalla" color={'var(--green-color)'} />
+              <span className="greenColor">We Purchase</span>
+            </Link>
+          </div>
+        </Popup>
         <Link to="/" css={mobileLogo}>
           <Svg icon="Logo" />
         </Link>
