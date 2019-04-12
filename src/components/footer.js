@@ -37,7 +37,6 @@ const wrapper = css`
   a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 14px;
     cursor: pointer;
   }
 
