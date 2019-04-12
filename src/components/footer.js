@@ -51,11 +51,27 @@ const wrapper = css`
     }
   }
 `
+const sidebarStyles = css`
+  flex-direction: column;
 
-const Footer = () => {
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 25px 0 0 25px;
+
+    & span {
+      margin: 5px 0 0 25px;
+      font-size: 16px;
+    }
+  }
+`
+
+const Footer = ({ asSidebar = false }) => {
   return (
-    <div css={wrapper}>
-      <div className="desktop">
+    <div css={asSidebar ? [wrapper, sidebarStyles] : wrapper}>
+      <div className={asSidebar ? null : 'desktop'}>
         <div className="column">
           <strong>
             <Link to="/we-manage/">WE MANAGE</Link>
@@ -110,31 +126,33 @@ const Footer = () => {
           </span>
         </div>
       </div>
-      <div className="mobile">
-        <div className="column">
-          <span>
-            <Link to="/we-manage/">WE MANAGE</Link>
-          </span>
-          <span>
-            <Link to="/you-manage/">YOU MANAGE</Link>
-          </span>
-          <span>
-            <Link to="/we-purchase/">WE PURCHASE</Link>
-          </span>
+      {asSidebar ? null : (
+        <div className="mobile">
+          <div className="column">
+            <span>
+              <Link to="/we-manage/">WE MANAGE</Link>
+            </span>
+            <span>
+              <Link to="/you-manage/">YOU MANAGE</Link>
+            </span>
+            <span>
+              <Link to="/we-purchase/">WE PURCHASE</Link>
+            </span>
+          </div>
+          >
+          <div className="column">
+            <span>
+              <Link to="/contact/">CONTACT</Link>
+            </span>
+            <span>
+              <Link to="/about-us/">ABOUT</Link>
+            </span>
+            <span>
+              <Link to="/management/">MANAGEMENT</Link>
+            </span>
+          </div>
         </div>
-        >
-        <div className="column">
-          <span>
-            <Link to="/contact/">CONTACT</Link>
-          </span>
-          <span>
-            <Link to="/about-us/">ABOUT</Link>
-          </span>
-          <span>
-            <Link to="/management/">MANAGEMENT</Link>
-          </span>
-        </div>
-      </div>
+      )}
     </div>
   )
 }

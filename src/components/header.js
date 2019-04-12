@@ -12,6 +12,11 @@ const headerStyles = css`
   color: #fdfdfd;
   font-size: 18px;
   height: calc(68vh - 125px);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) -9.48%,
+    rgba(0, 0, 0, 0) 100%
+  );
 
   a,
   .popUp {
@@ -40,6 +45,12 @@ const popUpOptions = css`
     }
   }
 `
+const hideOnMobile = css`
+  @media (max-width: 975px) {
+    display: none;
+  }
+`
+
 const heroTextContainer = css`
   position: absolute;
   top: 200px;
@@ -91,13 +102,13 @@ const navStyles = css`
   align-content: center;
   font-weight: 500;
   margin: 0 auto;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.8) -9.48%,
-    rgba(0, 0, 0, 0) 100%
-  );
   a {
     align-self: center;
+  }
+
+  @media (max-width: 975px) {
+    justify-content: space-between;
+    max-width: 750px;
   }
 `
 const noLinkStyles = css`
@@ -109,9 +120,6 @@ const noLinkStyles = css`
   &:hover {
     color: var(--orange-color);
   }
-  @media (max-width: 975px) {
-    display: none;
-  }
 `
 
 const mobileMenu = css`
@@ -119,19 +127,25 @@ const mobileMenu = css`
 
   @media (max-width: 975px) {
     display: block;
+    margin-right: 30px;
+  }
+  @media (max-width: 400px) {
+    margin-right: 20px;
   }
 `
 const mobileLogo = css`
   transition: all 0.25s ease-in-out;
   @media (max-width: 975px) {
     transform: scale(0.75, 0.75);
+    margin-left: -30px;
   }
   @media (max-width: 400px) {
     transform: scale(0.65, 0.65);
+    margin-left: -55px;
   }
 `
 
-const Header = ({ lightBackground = false }) => {
+const Header = ({ lightBackground = false, openSidebar }) => {
   const [popOverOpen, setPopOverOpen] = React.useState(false)
   let styleOverride = { backgroundColor: 'initial' }
   if (!lightBackground) {
@@ -143,12 +157,20 @@ const Header = ({ lightBackground = false }) => {
   return (
     <header css={headerStyles} style={styleOverride}>
       <nav css={navStyles}>
-        <Link to="/about-us" css={noLinkStyles} activeClassName="activeLink">
+        <Link
+          to="/about-us"
+          css={[hideOnMobile, noLinkStyles]}
+          activeClassName="activeLink"
+        >
           <span>About</span>
         </Link>
         <Popup
           trigger={
-            <span className="popUp" onMouseEnter={() => setPopOverOpen(true)}>
+            <span
+              css={hideOnMobile}
+              className="popUp"
+              onMouseEnter={() => setPopOverOpen(true)}
+            >
               Our Services
             </span>
           }
@@ -178,15 +200,30 @@ const Header = ({ lightBackground = false }) => {
         <Link to="/" css={mobileLogo}>
           <Svg icon="Logo" />
         </Link>
-        <Link to="/management/" css={noLinkStyles} activeClassName="activeLink">
+        <Link
+          to="/management/"
+          css={[hideOnMobile, noLinkStyles]}
+          activeClassName="activeLink"
+        >
           <span>Management</span>
         </Link>
-        <Link to="/contact" css={noLinkStyles} activeClassName="activeLink">
+        <Link
+          to="/contact"
+          css={[hideOnMobile, noLinkStyles]}
+          activeClassName="activeLink"
+        >
           <span>Contact</span>
         </Link>
-        <Link to="/contact" css={mobileMenu} activeClassName="activeLink">
+        <div
+          role="button"
+          aria-label="mobile menu"
+          tabIndex="0"
+          css={mobileMenu}
+          aria-pressed="false"
+          onClick={() => openSidebar()}
+        >
           <Svg icon="Hamburger" color="#fff" />
-        </Link>
+        </div>
       </nav>
       {lightBackground ? (
         <>

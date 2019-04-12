@@ -8,6 +8,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import { Sidebar, Menu } from 'semantic-ui-react'
+
 import Header from './header'
 import SubNav from './sub-nav'
 import Footer from './footer'
@@ -103,16 +105,38 @@ const getSubNavData = subNav => {
 }
 
 const Layout = ({ children, lightHeader = false, subNav }) => {
+  const [sidebarOpen, setSidebarOpen] = React.useState(false)
+  const openSidebar = () => {
+    setSidebarOpen(true)
+  }
+
   return (
-    <div className="pageWrapper">
-      <Header lightBackground={lightHeader} />
-      <div className="orangeLine" />
-      {subNav ? getSubNavData(subNav) : null}
-      <div className="spacer">
-        <main>{children}</main>
-      </div>
-      <Footer />
-    </div>
+    <Sidebar.Pushable>
+      <Sidebar
+        as={Menu}
+        animation="overlay"
+        direction="right"
+        icon="labeled"
+        vertical
+        inverted
+        width="very wide"
+        visible={sidebarOpen}
+        onHide={() => setSidebarOpen(false)}
+      >
+        <Footer asSidebar={true} />
+      </Sidebar>
+      <Sidebar.Pusher dimmed={sidebarOpen}>
+        <div className="pageWrapper">
+          <Header lightBackground={lightHeader} openSidebar={openSidebar} />
+          <div className="orangeLine" />
+          {subNav ? getSubNavData(subNav) : null}
+          <div className="spacer">
+            <main>{children}</main>
+          </div>
+          <Footer />
+        </div>
+      </Sidebar.Pusher>
+    </Sidebar.Pushable>
   )
 }
 
