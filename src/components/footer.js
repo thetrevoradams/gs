@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import { jsx, css } from '@emotion/core'
 
 const wrapper = css`
-  background-color: #272323;
+  background-color: #1A1C1D;
   width: 100%;
 
   .desktop,
@@ -140,7 +140,6 @@ const Footer = ({ asSidebar = false }) => {
               <Link to="/we-purchase/">WE PURCHASE</Link>
             </span>
           </div>
-          >
           <div className="column">
             <span>
               <Link to="/contact/">CONTACT</Link>
