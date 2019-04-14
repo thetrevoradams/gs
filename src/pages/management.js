@@ -2,8 +2,13 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import LeadershipSpotlight from '../components/leadership-spotlight'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
+import brian from '../images/Brian.png'
+import guy from '../images/Guy.png'
+import dustin from '../images/Dustin.png'
+import sam from '../images/Sam.png'
 
 const title = css`
   text-align: center;
@@ -18,6 +23,14 @@ const desc = css`
   font-size: 18px;
 `
 
+const grid = css`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  margin: 50px 0px;
+`
+
 const Management = () => (
   <Layout>
     <SEO title="Management" />
@@ -28,7 +41,36 @@ const Management = () => (
         standards of our team.
       </p>
 
-      <div>...</div>
+      <div css={grid}>
+        <LeadershipSpotlight
+          config={{
+            image: brian,
+            name: 'Brian Evans',
+            position: 'Managing Partner',
+          }}
+        />
+        <LeadershipSpotlight
+          config={{
+            image: guy,
+            name: 'Guy Adams',
+            position: 'Chief Information Officer',
+          }}
+        />
+        <LeadershipSpotlight
+          config={{
+            image: dustin,
+            name: 'Dustin Horne',
+            position: 'General Counsel',
+          }}
+        />
+        <LeadershipSpotlight
+          config={{
+            image: sam,
+            name: 'Sam Evans',
+            position: 'Director of Research',
+          }}
+        />
+      </div>
 
       <p css={desc}>
         Combined, our team has more than 70 years of experience in the business
