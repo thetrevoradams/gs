@@ -48,9 +48,9 @@ const LeadershipSpotlight = ({ config }) => {
         <path
           d="M42.375 58.333L51 50l-8.625-8.333M28 50h23"
           stroke="#3194D2"
-          stroke-width="3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <defs>
           <filter
@@ -60,9 +60,9 @@ const LeadershipSpotlight = ({ config }) => {
             width="79"
             height="79"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
