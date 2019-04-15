@@ -64,7 +64,7 @@ const QuoteCard = ({ image, quote }) => {
   return (
     <div css={wrapper}>
       <div className="slant">
-        <img src={image} />
+        <img src={image} alt="customer" />
       </div>
       <div className="quote">"{quote}"</div>
     </div>

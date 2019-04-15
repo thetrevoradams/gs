@@ -28,7 +28,7 @@ const svg = css`
 const LeadershipSpotlight = ({ config }) => {
   return (
     <div css={wrapper}>
-      <img css={img} src={config.image} />
+      <img css={img} src={config.image} alt={config.name} />
       <div css={name}>{config.name}</div>
       <div>{config.position}</div>
       <svg
