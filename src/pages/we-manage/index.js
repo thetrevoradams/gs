@@ -5,6 +5,8 @@ import { jsx, css } from '@emotion/core'
 import Svg from '../../components/svg'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
+import QuoteCard from '../../components/quote-card'
+import slide04 from '../../images/slide04.png'
 
 const bulletStyles = css`
   display: flex;
@@ -22,7 +24,7 @@ const WeManage = () => (
   <Layout subNav="weManage">
     <SEO title="Identification - We Manage" />
     <main className="textContainer">
-      <h2 className='orangeColor'>Identifying Your Portfolio</h2>
+      <h2 className="orangeColor">Identifying Your Portfolio</h2>
       <p>
         Due to a variety of factors including mergers and acquisitions,
         inadequate internal tracking systems, etc. most institutions have a very
@@ -50,6 +52,11 @@ const WeManage = () => (
         <Svg icon="ChevronsRight" color="var(--orange-color)" />
         More judgments mean greater potential revenues from collection!
       </div>
+
+      <QuoteCard
+        image={slide04}
+        quote="Guaranty Solutions doubled the size of our portfolio by finding judgments we didn’t know we had"
+      />
     </main>
   </Layout>
 )

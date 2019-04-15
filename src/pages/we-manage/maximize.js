@@ -5,12 +5,14 @@ import { jsx, css } from '@emotion/core'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import Svg from '../../components/svg'
+import QuoteCard from '../../components/quote-card'
+import slide02 from '../../images/slide02.png'
 
 const bulletTopContainer = css`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  
+
   @media (max-width: 750px) {
     flex-direction: column;
   }
@@ -94,6 +96,11 @@ const WeMaximize = () => (
           </div>
         </div>
       </div>
+
+      <QuoteCard
+        image={slide02}
+        quote="We gave them some of the worst files in our portfolio and somehow they found a way to collect on them"
+      />
     </main>
   </Layout>
 )
