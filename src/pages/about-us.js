@@ -28,7 +28,7 @@ const AboutUs = () => (
   <Layout>
     <SEO title="About Us" />
     <main className="textContainer">
-      <h2>About Us</h2>
+      <h1>About Us</h1>
       <p>
         Following the economic crisis of 2008, there was significant
         consolidation in the banking sector. As banks began managing the assets

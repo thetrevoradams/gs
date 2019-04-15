@@ -28,11 +28,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-typography`,
       options: {
-        google: {
-          families: ['Montserrat:300,500,600'],
-        },
+        pathToConfigModule: `src/utils/typography`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

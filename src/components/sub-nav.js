@@ -31,7 +31,15 @@ const navStyles = css`
   }
 `
 const titleStyles = css`
+  font-family: 'Butler';
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  top: 5px;
   flex: 1;
+  color: #525252;
 `
 
 const SubNav = ({ children, navTitle }) => (

@@ -41,7 +41,7 @@ const Management = () => (
   <Layout>
     <SEO title="Management" />
     <main className="textContainer">
-      <h2 css={title}>Management</h2>
+      <h1 css={title}>Management</h1>
       <p css={sub}>
         The integrity of our processes reflects the professionalism and
         standards of our team.
