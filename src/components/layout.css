@@ -35,12 +35,13 @@ body {
 .sidebar div:last-of-type {
   background-color: #191C1D;
   width: 50vw;
+  min-width: 250px;
 }
 .sidebar div:last-of-type div {
   margin-left: 15px;
 }
 .subNavLink {
-  padding: 0 5px 5px 5px;
+  padding: 0 5px 15px 5px;
   text-decoration: none;
   margin-left: 65px;
   font-weight: 500;
