@@ -19,6 +19,7 @@ const bulletContainer = css`
   display: flex;
   flex-direction: column;
   max-width: 75%;
+  width: 500px;
   @media (max-width: 750px) {
     width: 391px;
     max-width: 100%;
@@ -40,7 +41,14 @@ const bulletStyles = css`
 const YouManage = () => (
   <Layout subNav="youManage">
     <SEO title="Overview - You Manage" />
-    <main className="textContainer">
+    <main className="textContainer" css={
+      css`
+        h4 {
+          margin-top: 50px;
+          font-family: 'Montserrat'
+        }
+      `
+    }>
       <h2 className="blueColor">Judgment Database</h2>
       <p>
         No need to worry about convincing your IT group to approve and support a

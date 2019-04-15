@@ -11,7 +11,7 @@ const navStyles = css`
   align-items: center;
   padding: 20px 40px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     justify-content: center;
     div:first-of-type {
@@ -35,11 +35,19 @@ const titleStyles = css`
   font-weight: bold;
   font-size: 40px;
   letter-spacing: 0.08em;
+  white-space: nowrap;
   text-transform: uppercase;
   position: relative;
   top: 5px;
   flex: 1;
   color: #525252;
+  @media (max-width: 580px) {
+    font-size: 35px;
+  }
+  @media (max-width: 350px) {
+    font-size: 30px;
+  }
+
 `
 
 const SubNav = ({ children, navTitle }) => (

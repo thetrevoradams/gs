@@ -15,6 +15,7 @@ const wrapper = css`
 `
 
 const h3Style = css`
+  font-family: 'Montserrat';
   text-transform: uppercase;
   font-weight: bold;
   font-size: 22px;
