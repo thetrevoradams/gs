@@ -29,6 +29,12 @@ const grid = css`
   grid-template-rows: 1fr 1fr;
   justify-items: center;
   margin: 50px 0px;
+
+  @media (max-width: 699px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `
 
 const Management = () => (

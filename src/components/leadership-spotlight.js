@@ -9,8 +9,8 @@ const wrapper = css`
 `
 
 const img = css`
-  width: 220px;
-  height: 220px;
+  max-width: 220px;
+  max-height: 220px;
   border-radius: 100%;
 `
 
