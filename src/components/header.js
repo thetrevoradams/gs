@@ -249,7 +249,9 @@ const Header = ({ lightBackground = false, openSidebar }) => {
           <Image imgName="skyscrappers" altText="sky scrappers" />
           <div css={heroTextContainer}>
             <h1>The Leading Expert</h1>
-            <h2>in Judgment Portfolio Management</h2>
+            <h2 style={{ fontFamily: 'Montserrat' }}>
+              in Judgment Portfolio Management
+            </h2>
           </div>
         </>
       ) : null}
