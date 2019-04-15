@@ -1,7 +1,7 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 import { Link } from 'gatsby'
 import Image from './image'
-import { Popup } from 'semantic-ui-react'
+import Popover from '@material-ui/core/Popover'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
@@ -23,7 +23,7 @@ const headerStyles = css`
     align-self: center;
   }
 `
-const popUpOptions = css`
+const subnavOptions = css`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -146,13 +146,25 @@ const mobileLogo = css`
 `
 
 const Header = ({ lightBackground = false, openSidebar }) => {
-  const [popOverOpen, setPopOverOpen] = React.useState(false)
+  let [subnavOpen, setSubnavOpen] = React.useState(false)
+  let [anchorEl, setAnchorEl] = React.useState(null)
   let styleOverride = { backgroundColor: 'initial' }
   if (!lightBackground) {
     styleOverride = {
       backgroundColor: '#545454',
       height: '125px',
     }
+  }
+
+  const openSubNav = e => {
+    if (e && e.currentTarget) {
+      setAnchorEl(e.currentTarget)
+      setSubnavOpen(true)
+    }
+  }
+  const closeSubnav = () => {
+    console.log('closing')
+    setSubnavOpen(false)
   }
   return (
     <header css={headerStyles} style={styleOverride}>
@@ -164,39 +176,46 @@ const Header = ({ lightBackground = false, openSidebar }) => {
         >
           <span>About</span>
         </Link>
-        <Popup
-          trigger={
-            <span
-              css={hideOnMobile}
-              className="popUp"
-              onMouseEnter={() => setPopOverOpen(true)}
-            >
-              Our Services
-            </span>
-          }
-          flowing
-          on={['hover', 'click']}
-          position="bottom center"
-          hoverable
-          hideOnScroll
-          style={{ borderRadius: '5px' }}
-          open={popOverOpen}
-        >
-          <div css={popUpOptions} onMouseLeave={() => setPopOverOpen(false)}>
-            <Link to="/we-manage" css={noLinkStyles}>
-              <Svg icon="Barchart" color={'var(--orange-color)'} />
-              <span className="orangeColor">We Manage</span>
-            </Link>
-            <Link to="/you-manage" css={noLinkStyles}>
-              <Svg icon="Activity" color={'var(--blue-color)'} />
-              <span className="blueColor">You Manage</span>
-            </Link>
-            <Link to="/we-purchase" css={noLinkStyles}>
-              <Svg icon="Dalla" color={'var(--green-color)'} />
-              <span className="greenColor">We Purchase</span>
-            </Link>
-          </div>
-        </Popup>
+        <div style={{ display: 'flex' }}>
+          <span
+            aria-haspopup="true"
+            css={hideOnMobile}
+            className="popUp"
+            onClick={openSubNav}
+            onMouseEnter={openSubNav}
+          >
+            Our Services
+          </span>
+          <Popover
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+            open={subnavOpen}
+            onClose={closeSubnav}
+            disableRestoreFocus
+          >
+            <div css={subnavOptions} onMouseLeave={closeSubnav}>
+              <Link to="/we-manage" css={noLinkStyles}>
+                <Svg icon="Barchart" color={'var(--orange-color)'} />
+                <span className="orangeColor">We Manage</span>
+              </Link>
+              <Link to="/you-manage" css={noLinkStyles}>
+                <Svg icon="Activity" color={'var(--blue-color)'} />
+                <span className="blueColor">You Manage</span>
+              </Link>
+              <Link to="/we-purchase" css={noLinkStyles}>
+                <Svg icon="Dalla" color={'var(--green-color)'} />
+                <span className="greenColor">We Purchase</span>
+              </Link>
+            </div>
+          </Popover>
+        </div>
         <Link to="/" css={mobileLogo}>
           <Svg icon="Logo" />
         </Link>

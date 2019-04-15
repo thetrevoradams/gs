@@ -32,23 +32,12 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
-.ui.bottom.center.popup:before {
-  top: -0.4em;
+.sidebar div:last-of-type {
+  background-color: #191C1D;
+  width: 50vw;
 }
-.ui.popup:after {
-  position: absolute;
-  content: '';
-  top: -20px;
-  width: 100%;
-  left: 0;
-  height: 1em;
-  background: transparent;
-  z-index: 2;
-}
-.ui.popup:before {
-  width: 1em;
-  height: 1em;
-  border-radius: 4px;
+.sidebar div:last-of-type div {
+  margin-left: 15px;
 }
 .subNavLink {
   padding: 0 5px 5px 5px;

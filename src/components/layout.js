@@ -8,12 +8,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { Sidebar, Menu } from 'semantic-ui-react'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 
 import Header from './header'
 import SubNav from './sub-nav'
 import Footer from './footer'
-import 'semantic-ui-css/semantic.min.css'
 import './layout.css'
 
 const getSubNavData = subNav => {
@@ -106,37 +105,33 @@ const getSubNavData = subNav => {
 
 const Layout = ({ children, lightHeader = false, subNav }) => {
   const [sidebarOpen, setSidebarOpen] = React.useState(false)
-  const openSidebar = () => {
-    setSidebarOpen(true)
+  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen)
   }
 
   return (
-    <Sidebar.Pushable>
-      <Sidebar
-        as={Menu}
-        animation="overlay"
-        direction="right"
-        icon="labeled"
-        vertical
-        inverted
-        width="very wide"
-        visible={sidebarOpen}
-        onHide={() => setSidebarOpen(false)}
+    <div className="pageWrapper" tabIndex={0} role="button">
+      <SwipeableDrawer
+        disableBackdropTransition={!iOS}
+        disableDiscovery={iOS}
+        anchor="right"
+        open={sidebarOpen}
+        onOpen={toggleSidebar}
+        onClose={toggleSidebar}
+        className='sidebar'
       >
         <Footer asSidebar={true} />
-      </Sidebar>
-      <Sidebar.Pusher dimmed={sidebarOpen}>
-        <div className="pageWrapper">
-          <Header lightBackground={lightHeader} openSidebar={openSidebar} />
-          <div className="orangeLine" />
-          {subNav ? getSubNavData(subNav) : null}
-          <div className="spacer">
-            <main>{children}</main>
-          </div>
-          <Footer />
-        </div>
-      </Sidebar.Pusher>
-    </Sidebar.Pushable>
+      </SwipeableDrawer>
+
+      <Header lightBackground={lightHeader} openSidebar={toggleSidebar} />
+      <div className="orangeLine" />
+      {subNav ? getSubNavData(subNav) : null}
+      <div className="spacer">
+        <main>{children}</main>
+      </div>
+      <Footer />
+    </div>
   )
 }
 

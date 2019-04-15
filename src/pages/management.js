@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' // eslint-disable-line no-unused-vars
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
