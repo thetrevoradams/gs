@@ -53,6 +53,7 @@ const Management = () => (
             image: brian,
             name: 'Brian Evans',
             position: 'Managing Partner',
+            bioName: 'brian',
           }}
         />
         <LeadershipSpotlight
@@ -60,6 +61,7 @@ const Management = () => (
             image: guy,
             name: 'Guy Adams',
             position: 'Chief Information Officer',
+            bioName: 'guy',
           }}
         />
         <LeadershipSpotlight
@@ -67,6 +69,7 @@ const Management = () => (
             image: dustin,
             name: 'Dustin Horne',
             position: 'General Counsel',
+            bioName: 'dustin',
           }}
         />
         <LeadershipSpotlight
@@ -74,6 +77,7 @@ const Management = () => (
             image: sam,
             name: 'Sam Evans',
             position: 'Director of Research',
+            bioName: 'sam',
           }}
         />
       </div>

@@ -1,4 +1,6 @@
-import React from 'react' // eslint-disable-line no-unused-vars
+import React, { useEffect } from 'react' // eslint-disable-line no-unused-vars
+import Dialog from '@material-ui/core/Dialog'
+import Bios from '../biographies/bios'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
@@ -25,9 +27,26 @@ const svg = css`
   left: 190px;
 `
 
-const LeadershipSpotlight = ({ config }) => {
+const LeadershipSpotlight = ({ config = { bioName: '' } }) => {
+  const [modalOpen, setOpenModal] = React.useState(false)
+
+  function handleClick() {
+    setOpenModal(true)
+  }
+
+  function handleClose() {
+    console.log('close')
+    setOpenModal(false)
+  }
+
   return (
-    <div css={wrapper}>
+    <div css={wrapper} onClick={handleClick}>
+      <Dialog open={modalOpen} onClose={handleClose}>
+        {Bios[config.bioName].map(text => (
+          <p>{text}</p>
+        ))}
+      </Dialog>
+
       <img css={img} src={config.image} alt={config.name} />
       <div css={name}>{config.name}</div>
       <div>{config.position}</div>
