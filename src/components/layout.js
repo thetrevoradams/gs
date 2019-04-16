@@ -105,7 +105,7 @@ const getSubNavData = subNav => {
 
 const Layout = ({ children, lightHeader = false, subNav }) => {
   const [sidebarOpen, setSidebarOpen] = React.useState(false)
-  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen)
   }
@@ -119,7 +119,7 @@ const Layout = ({ children, lightHeader = false, subNav }) => {
         open={sidebarOpen}
         onOpen={toggleSidebar}
         onClose={toggleSidebar}
-        className='sidebar'
+        className="sidebar"
       >
         <Footer asSidebar={true} />
       </SwipeableDrawer>

@@ -67,7 +67,12 @@ const Contact = () => (
     <main className="textContainer">
       <h1>Contact</h1>
       <div css={pageLayout}>
-        <form name="contact" data-netlify-recaptcha="true" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          data-netlify-recaptcha="true"
+          method="POST"
+          data-netlify="true"
+        >
           <div css={inputContainer}>
             <TextField
               id="outlined-name-input"
@@ -100,7 +105,7 @@ const Contact = () => (
           />
 
           <Button variant="contained" css={submitBtn}>
-            <Svg icon="Send" color="#FDFDFD" style={{ marginRight: '5px' }} />
+            <Svg icon="Send" color="#FDFDFD" />
             SUBMIT
           </Button>
         </form>

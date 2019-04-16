@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import { jsx, css } from '@emotion/core'
 
 const wrapper = css`
-  background-color: #1A1C1D;
+  background-color: #1a1c1d;
   width: 100%;
 
   .desktop,

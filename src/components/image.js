@@ -27,7 +27,7 @@ const overlay = css`
   left: 0;
   right: 0;
   height: calc(70vh - 18px);
-  background: rgba(0,0,0,0.67);
+  background: rgba(0, 0, 0, 0.67);
 `
 
 const Image = () => (
@@ -45,7 +45,10 @@ const Image = () => (
     `}
     render={data => (
       <div css={overlay}>
-        <Img fluid={data.skyscrappers.childImageSharp.fluid} css={imageStyling} />
+        <Img
+          fluid={data.skyscrappers.childImageSharp.fluid}
+          css={imageStyling}
+        />
       </div>
     )}
   />

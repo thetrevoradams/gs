@@ -47,7 +47,6 @@ const titleStyles = css`
   @media (max-width: 350px) {
     font-size: 30px;
   }
-
 `
 
 const SubNav = ({ children, navTitle }) => (

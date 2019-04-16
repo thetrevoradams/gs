@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "guaranty-solutions-website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A Guaranty Solutions website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Trevor Adams, Chad Eddington",
   "dependencies": {
     "@emotion/core": "^10.0.9",
     "gatsby": "2.x",
