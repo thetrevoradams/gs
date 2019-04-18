@@ -152,7 +152,7 @@ const Contact = ({ classes }) => (
             variant="outlined"
           />
 
-          <button css={submitBtn}>
+          <button css={submitBtn} type="submit">
             <Svg icon="Send" color="#FDFDFD" />
             SUBMIT
           </button>
