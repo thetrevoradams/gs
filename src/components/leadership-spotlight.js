@@ -148,15 +148,15 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
   }
 
   function handleClose() {
-    console.log('close')
     setOpenModal(false)
   }
 
   return (
-    <div css={wrapper} onClick={handleClick}>
+    <div css={wrapper}>
       <Dialog
         open={modalOpen}
         onClose={handleClose}
+        onBackdropClick={handleClose}
         maxWidth="lg"
         fullScreen={isFullwidth}
       >
@@ -211,7 +211,7 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
         </div>
       </Dialog>
 
-      <div css={imgCrop}>
+      <div css={imgCrop} onClick={handleClick}>
         <img
           css={img}
           style={config.name === 'Sam Evans' ? { marginTop: -30 } : {}}
