@@ -119,8 +119,14 @@ const Contact = ({ classes }) => (
     <main className="wideContainer">
       <h1>Contact</h1>
       <div css={pageLayout}>
-        <form name="contact" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
           <div css={inputContainer}>
+            <input type="hidden" name="bot-field" />
             <TextField
               id="outlined-name-input"
               label="Name"
@@ -144,6 +150,7 @@ const Contact = ({ classes }) => (
           <TextField
             id="outlined-multiline-static"
             label="Message"
+            name="message"
             placeholder="How may we help you?"
             multiline
             fullWidth
