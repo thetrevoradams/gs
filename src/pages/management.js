@@ -54,6 +54,9 @@ const Management = () => (
             name: 'Brian Evans',
             position: 'Managing Partner',
             bioName: 'brian',
+            phone: '480.924.6499',
+            fax: '480.240.4187',
+            email: 'bevans@guaranty-solutions.com',
           }}
         />
         <LeadershipSpotlight
@@ -62,6 +65,7 @@ const Management = () => (
             name: 'Guy Adams',
             position: 'Chief Information Officer',
             bioName: 'guy',
+            phone: '480.924.6499',
           }}
         />
         <LeadershipSpotlight
@@ -70,6 +74,7 @@ const Management = () => (
             name: 'Dustin Horne',
             position: 'General Counsel',
             bioName: 'dustin',
+            phone: '480.924.6499',
           }}
         />
         <LeadershipSpotlight
@@ -78,6 +83,7 @@ const Management = () => (
             name: 'Sam Evans',
             position: 'Director of Research',
             bioName: 'sam',
+            phone: '480.924.6499',
           }}
         />
       </div>

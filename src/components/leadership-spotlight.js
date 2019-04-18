@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react' // eslint-disable-line no-unused-vars
 import Dialog from '@material-ui/core/Dialog'
 import Bios from '../biographies/bios'
+import Svg from './svg'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
@@ -13,6 +14,7 @@ const wrapper = css`
 const dialogContent = css`
   display: flex;
   overflow: hidden;
+  max-height: 600px;
 
   .contact {
     flex: 1;
@@ -21,6 +23,24 @@ const dialogContent = css`
 
   .contact img {
     width: 100%;
+  }
+
+  .contactInfo div {
+    color: #fdfdfd;
+    display: flex;
+    align-items: center;
+  }
+
+  .contactInfo {
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+  }
+
+  .contact-icon {
+    padding: 5px 10px;
   }
 
   .bio {
@@ -55,7 +75,7 @@ const svg = css`
   left: 190px;
 `
 
-const LeadershipSpotlight = ({ config = { bioName: '' } }) => {
+const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
   const [modalOpen, setOpenModal] = React.useState(false)
 
   function handleClick() {
@@ -73,6 +93,38 @@ const LeadershipSpotlight = ({ config = { bioName: '' } }) => {
         <div css={dialogContent}>
           <div className="contact">
             <img src={config.image} alt={config.name} />
+            <div className="contactInfo">
+              <div>
+                <span className="contact-icon">
+                  <Svg icon="Phone" color="#3194D2" scale={0.8} />
+                </span>
+                <span>
+                  <a href={`telto:${config.phone.split('.').join('-')}`}>
+                    {config.phone}
+                  </a>
+                </span>
+              </div>
+              <div>
+                <span className="contact-icon">
+                  <Svg icon="Fax" color="#3194D2" scale={0.8} />
+                </span>
+                <span>{config.fax}</span>
+              </div>
+              <div>
+                <span className="contact-icon">
+                  <Svg icon="Email" color="#3194D2" scale={0.8} />
+                </span>
+                <span>
+                  <a href={`mailto:${config.email}`}>{config.email}</a>
+                </span>
+              </div>
+              <div>
+                <span className="contact-icon">
+                  <Svg icon="Download" color="#3194D2" scale={0.8} />
+                </span>
+                vcard
+              </div>
+            </div>
           </div>
           <div className="bio">
             <h3>{config.name}</h3>
