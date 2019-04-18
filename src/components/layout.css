@@ -649,11 +649,10 @@ pre tt:after {
   margin: 0 auto;
 }
 .activeSubLink {
-  border-bottom: 2px solid var(--orange-color);
+  border-bottom: 2px solid;
 }
 .activeLink {
-  color: var(--orange-color) !important;
-  border-bottom: 2px solid var(--orange-color) !important;
+  border-bottom: 2px solid !important;
 }
 .flex {
   display: flex;
