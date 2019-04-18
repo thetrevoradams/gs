@@ -22,6 +22,9 @@ const headerStyles = css`
   .popUp {
     align-self: center;
   }
+  @media (max-width: 900px) {
+    height: calc(68vh - 130px);
+  }
 `
 const subnavOptions = css`
   display: flex;
