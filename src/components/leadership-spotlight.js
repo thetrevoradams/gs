@@ -12,6 +12,7 @@ const wrapper = css`
 
 const dialogContent = css`
   display: flex;
+  overflow: hidden;
 
   .contact {
     flex: 1;
@@ -26,6 +27,7 @@ const dialogContent = css`
     padding: 20px;
     font-size: 16px;
     flex: 1;
+    overflow-y: scroll;
   }
 `
 
