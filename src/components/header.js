@@ -25,6 +25,9 @@ const headerStyles = css`
   @media (max-width: 900px) {
     height: calc(68vh - 130px);
   }
+  @media (max-width: 450px) {
+    height: calc(68vh - 132px);
+  }
 `
 const subnavOptions = css`
   display: flex;
