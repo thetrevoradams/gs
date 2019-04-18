@@ -12,20 +12,34 @@ const wrapper = css`
 
 const dialogContent = css`
   display: flex;
+
   .contact {
     flex: 1;
+    background-color: #060606;
   }
+
+  .contact img {
+    width: 100%;
+  }
+
   .bio {
-    padding: 10px;
+    padding: 20px;
     font-size: 16px;
     flex: 1;
   }
 `
 
+const imgCrop = css`
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 100%;
+`
+
 const img = css`
   max-width: 220px;
-  max-height: 220px;
-  border-radius: 100%;
+  margin-top: -10px;
+  margin-left: -10px;
 `
 
 const name = css`
@@ -68,7 +82,14 @@ const LeadershipSpotlight = ({ config = { bioName: '' } }) => {
         </div>
       </Dialog>
 
-      <img css={img} src={config.image} alt={config.name} />
+      <div css={imgCrop}>
+        <img
+          css={img}
+          style={config.name === 'Sam Evans' ? { marginTop: -30 } : {}}
+          src={config.image}
+          alt={config.name}
+        />
+      </div>
       <div css={name}>{config.name}</div>
       <div>{config.position}</div>
       <svg

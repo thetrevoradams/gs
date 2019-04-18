@@ -5,9 +5,9 @@ import SEO from '../components/seo'
 import LeadershipSpotlight from '../components/leadership-spotlight'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
-import brian from '../images/Brian.png'
-import guy from '../images/Guy.png'
-import dustin from '../images/Dustin.png'
+import brian from '../images/Brian.jpg'
+import guy from '../images/Guy.jpg'
+import dustin from '../images/Dustin.jpg'
 import sam from '../images/Sam.png'
 
 const title = css`
