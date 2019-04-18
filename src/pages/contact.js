@@ -1,6 +1,5 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
@@ -69,9 +68,22 @@ const inputContainer = css`
 const submitBtn = css`
   font-family: 'Montserrat', sans-serif;
   background-color: #dc7f0d;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: #fdfdfd;
   font-size: 14px;
+  padding: 6px 16px;
   margin-top: 8px;
+  line-height: 1.75;
+  min-width: 64px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  font-weight: 500;
+  border: none;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
   svg {
     margin-right: 5px;
   }
@@ -140,10 +152,10 @@ const Contact = ({ classes }) => (
             variant="outlined"
           />
 
-          <Button variant="contained" css={submitBtn} type='submit'>
+          <button css={submitBtn}>
             <Svg icon="Send" color="#FDFDFD" />
             SUBMIT
-          </Button>
+          </button>
         </form>
         <div>
           <p>
