@@ -1,6 +1,8 @@
 import React from 'react' // eslint-disable-line no-unused-vars
+import { withStyles } from '@material-ui/core/styles'
+
 import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+import ButtonBase from '@material-ui/core/ButtonBase'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
@@ -8,9 +10,21 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Svg from '../components/svg'
 
+const styles = theme => ({
+  cssOutlinedInput: {
+    '&$cssInputFocused $notchedOutline': {
+      borderColor: `var(--orange-color) !important`,
+    },
+  },
+
+  cssFocused: { color: `var(--orange-color) !important` },
+  cssInputFocused: {},
+  notchedOutline: {},
+})
+
 const pageLayout = css`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 10px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 50px 1.5fr;
 
   form {
     grid-column-start: 1;
@@ -23,6 +37,15 @@ const pageLayout = css`
     p {
       margin-top: 15px;
       font-size: 14px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    & > div {
+      margin: 0 auto;
     }
   }
 `
@@ -41,8 +64,10 @@ const inputContainer = css`
   }
 
   @media (max-width: 751px) {
+    flex-direction: column;
     & > div {
       width: 100%;
+      margin-top: 8px;
     }
     & > div:last-of-type {
       margin-left: 0;
@@ -54,6 +79,17 @@ const submitBtn = css`
   background-color: #dc7f0d;
   color: #fdfdfd;
   font-size: 14px;
+  padding: 6px 16px;
+  margin-top: 8px;
+  line-height: 1.75;
+  min-width: 64px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  font-weight: 500;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
   svg {
     margin-right: 5px;
   }
@@ -61,18 +97,23 @@ const submitBtn = css`
     background-color: #c57514;
   }
 `
-const Contact = () => (
+const contactLine = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  &:last-child {
+    margin-left: 15px;
+  }
+`
+
+const Contact = ({ classes }) => (
   <Layout>
     <SEO title="Contact" />
-    <main className="textContainer">
+    <main className="wideContainer">
       <h1>Contact</h1>
       <div css={pageLayout}>
-        <form
-          name="contact"
-          data-netlify-recaptcha="true"
-          method="POST"
-          data-netlify="true"
-        >
+        <form name="contact" method="POST" data-netlify="true">
           <div css={inputContainer}>
             <TextField
               id="outlined-name-input"
@@ -82,6 +123,19 @@ const Contact = () => (
               autoComplete="name"
               margin="normal"
               variant="outlined"
+              InputLabelProps={{
+                classes: {
+                  root: classes.cssLabel,
+                  focused: classes.cssFocused,
+                },
+              }}
+              InputProps={{
+                classes: {
+                  root: classes.cssOutlinedInput,
+                  focused: classes.cssInputFocused,
+                  notchedOutline: classes.notchedOutline,
+                },
+              }}
             />
             <TextField
               id="outlined-email-input"
@@ -90,7 +144,21 @@ const Contact = () => (
               name="email"
               autoComplete="email"
               margin="normal"
+              required
               variant="outlined"
+              InputLabelProps={{
+                classes: {
+                  root: classes.cssLabel,
+                  focused: classes.cssFocused,
+                },
+              }}
+              InputProps={{
+                classes: {
+                  root: classes.cssOutlinedInput,
+                  focused: classes.cssInputFocused,
+                  notchedOutline: classes.notchedOutline,
+                },
+              }}
             />
           </div>
           <TextField
@@ -100,14 +168,27 @@ const Contact = () => (
             multiline
             fullWidth
             rows="8"
-            margin="normal"
+            margin="dense"
             variant="outlined"
+            InputLabelProps={{
+              classes: {
+                root: classes.cssLabel,
+                focused: classes.cssFocused,
+              },
+            }}
+            InputProps={{
+              classes: {
+                root: classes.cssOutlinedInput,
+                focused: classes.cssInputFocused,
+                notchedOutline: classes.notchedOutline,
+              },
+            }}
           />
 
-          <Button variant="contained" css={submitBtn}>
+          <ButtonBase variant="contained" css={submitBtn}>
             <Svg icon="Send" color="#FDFDFD" />
             SUBMIT
-          </Button>
+          </ButtonBase>
         </form>
         <div>
           <p>
@@ -116,10 +197,23 @@ const Contact = () => (
             1347 N. Greenfield Rd. Ste 103 <br />
             Mesa, AZ 85205
           </p>
+
+          <div css={contactLine}>
+            <Svg icon="Phone" color="#3194D2" />
+            <span>480.924.6499</span>
+          </div>
+          <div css={contactLine}>
+            <Svg icon="Fax" color="#3194D2" />
+            <span>480.240.4187</span>
+          </div>
+          <div css={contactLine}>
+            <Svg icon="Email" color="#3194D2" />
+            <span>info@guaranty-solutions.com</span>
+          </div>
         </div>
       </div>
     </main>
   </Layout>
 )
 
-export default Contact
+export default withStyles(styles)(Contact)

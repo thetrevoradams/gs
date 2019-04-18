@@ -46,9 +46,7 @@ body {
   text-decoration: none;
   margin-left: 65px;
   font-weight: 500;
-}
-.subNavLink:hover {
-  border-bottom: 2px solid;
+  border-bottom: 2px solid transparent;
 }
 article,
 aside,
@@ -645,8 +643,12 @@ pre tt:after {
   max-width: 700px;
   margin: 0 auto;
 }
+.wideContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
 .activeSubLink {
-  border-bottom: 2px solid;
+  border-bottom: 2px solid var(--orange-color);
 }
 .activeLink {
   color: var(--orange-color) !important;
