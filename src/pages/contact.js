@@ -1,5 +1,7 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 import TextField from '@material-ui/core/TextField'
+import Helmet from 'react-helmet'
+
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
@@ -119,6 +121,27 @@ const Contact = ({ classes }) => (
     <main className="wideContainer">
       <h1>Contact</h1>
       <div css={pageLayout}>
+        <Helmet>
+          <script type="text/javascript">{`
+            let formContainer = document.createElement('div');
+            formContainer.innerHTML = '
+            <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+              <input type="text" name="name" />
+              <input type="email" name="email" />
+              <textarea name="message" />
+            </form>
+            '
+            document.body.appendChild(formContainer)`}
+          </script>
+        </Helmet>
+        {
+          /*A little help for the Netlify bots to process the form */
+          <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <textarea name="message" />
+          </form>
+        }
         <form
           name="contact"
           method="post"
