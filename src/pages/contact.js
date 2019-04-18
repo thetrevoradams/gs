@@ -46,6 +46,12 @@ const pageLayout = css`
     width: 100%;
     & > div {
       margin: 0 auto;
+      p {
+        font-size: 16px;
+      }
+      * {
+        font-size: 16px;
+      }
     }
   }
 `
@@ -102,7 +108,19 @@ const contactLine = css`
   flex-direction: row;
   justify-content: flex-start;
   align-content: center;
-  &:last-child {
+  margin-bottom: 20px;
+  font-size: 14px;
+
+  & a {
+    color: #403a34;
+    text-decoration: none;
+  }
+
+  & span.pointer:hover {
+    cursor: pointer;
+  }
+
+  & span:last-child {
     margin-left: 15px;
   }
 `
@@ -200,7 +218,9 @@ const Contact = ({ classes }) => (
 
           <div css={contactLine}>
             <Svg icon="Phone" color="#3194D2" />
-            <span>480.924.6499</span>
+            <span className="pointer">
+              <a href="tel:480-924-6499">480.924.6499</a>
+            </span>
           </div>
           <div css={contactLine}>
             <Svg icon="Fax" color="#3194D2" />
@@ -208,7 +228,11 @@ const Contact = ({ classes }) => (
           </div>
           <div css={contactLine}>
             <Svg icon="Email" color="#3194D2" />
-            <span>info@guaranty-solutions.com</span>
+            <span className="pointer">
+              <a href="mailto:info@guaranty-solutions.com">
+                info@guaranty-solutions.com
+              </a>
+            </span>
           </div>
         </div>
       </div>
