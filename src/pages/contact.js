@@ -120,23 +120,12 @@ const Contact = ({ classes }) => (
     <main className="wideContainer">
       <h1>Contact</h1>
       <div css={pageLayout}>
-        {
-          /*A little help for the Netlify bots to process the form */
-          <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-            <input type="text" name="name" />
-            <input type="email" name="email" />
-            <textarea name="message" />
-          </form>
-        }
         <form
           name="contact"
           method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          action="/success"
         >
           <div css={inputContainer}>
-            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
             <TextField
               id="outlined-name-input"
               label="Name"
