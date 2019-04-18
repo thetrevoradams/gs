@@ -34,10 +34,7 @@ body {
 }
 .sidebar div:last-of-type {
   background-color: #191c1d;
-<<<<<<< HEAD
-=======
   min-width: 250px;
->>>>>>> Add bios
   width: 50vw;
   min-width: 250px;
 }
