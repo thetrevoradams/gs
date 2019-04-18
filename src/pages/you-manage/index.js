@@ -45,7 +45,7 @@ const YouManage = () => (
       css`
         h4 {
           margin-top: 50px;
-          font-family: 'Montserrat'
+          font-family: 'Montserrat' sans-serif
         }
       `
     }>

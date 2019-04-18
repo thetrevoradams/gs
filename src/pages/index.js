@@ -60,7 +60,7 @@ const IndexPage = () => (
               margin: '50px 0px',
               textAlign: 'center',
               fontWeight: 300,
-              fontFamily: 'Montserrat',
+              fontFamily: 'Montserrat, sans-serif'
             }}
           >
             COMPARISON

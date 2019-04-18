@@ -15,13 +15,14 @@ const wrapper = css`
 `
 
 const h3Style = css`
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
 `
 
 const desc = css`

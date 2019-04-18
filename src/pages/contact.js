@@ -81,7 +81,7 @@ const inputContainer = css`
   }
 `
 const submitBtn = css`
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   background-color: #dc7f0d;
   color: #fdfdfd;
   font-size: 14px;

@@ -45,6 +45,9 @@ const wrapper = css`
     display: flex;
     align-items: center;
     font-size: 12px;
+    line-height: 29px;
+    letter-spacing: 0.08em;
+    margin: 0 0 5px 15px;
   }
 `
 
@@ -58,6 +61,8 @@ const weManage = css`
 
   h3 {
     color: rgba(220, 127, 13, 1);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
   }
 
   .content {
@@ -75,6 +80,8 @@ const youManage = css`
 
   h3 {
     color: rgba(52, 148, 209, 1);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
   }
 
   .content {
@@ -93,6 +100,8 @@ const wePurchase = css`
 
   h3 {
     color: rgba(62, 173, 156, 1);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
   }
 
   .content {
