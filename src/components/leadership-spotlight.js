@@ -17,6 +17,20 @@ const dialogContent = css`
   max-height: 600px;
   flex-wrap: wrap;
 
+  .close-btn {
+    width: 48px;
+    height: 48px;
+    background: #3194d2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
   .contact {
     width: 30%;
     max-width: 200px;
@@ -134,19 +148,22 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
   }
 
   function handleClose() {
-    console.log('close')
     setOpenModal(false)
   }
 
   return (
-    <div css={wrapper} onClick={handleClick}>
+    <div css={wrapper}>
       <Dialog
         open={modalOpen}
         onClose={handleClose}
+        onBackdropClick={handleClose}
         maxWidth="lg"
         fullScreen={isFullwidth}
       >
         <div css={dialogContent}>
+          <div className="close-btn" onClick={handleClose}>
+            <Svg icon="CloseX" color="white" scale={0.8} />
+          </div>
           <div className="contact">
             <div className="img-wrapper">
               <img src={config.image} alt={config.name} />
@@ -194,7 +211,7 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
         </div>
       </Dialog>
 
-      <div css={imgCrop}>
+      <div css={imgCrop} onClick={handleClick}>
         <img
           css={img}
           style={config.name === 'Sam Evans' ? { marginTop: -30 } : {}}
