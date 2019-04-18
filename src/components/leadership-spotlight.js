@@ -15,10 +15,17 @@ const dialogContent = css`
   display: flex;
   overflow: hidden;
   max-height: 600px;
+  flex-wrap: wrap;
 
   .contact {
-    flex: 1;
+    width: 30%;
+    max-width: 200px;
     background-color: #060606;
+    font-size: 14px;
+  }
+
+  .img-wrapper {
+    width: 100%;
   }
 
   .contact img {
@@ -44,10 +51,48 @@ const dialogContent = css`
   }
 
   .bio {
-    padding: 20px;
+    padding: 20px 40px;
     font-size: 16px;
     flex: 1;
     overflow-y: scroll;
+  }
+
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #403a34;
+    font-weight: normal;
+    margin-top: 0px;
+  }
+
+  @media (max-width: 795px), (max-height: 590px) {
+    .contact {
+      width: 100%;
+      max-width: none;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .img-wrapper {
+      max-width: 200px;
+    }
+
+    overflow: scroll;
+  }
+
+  @media (max-width: 640px) {
+    .img-wrapper {
+      margin: auto;
+    }
+
+    .contactInfo {
+      margin-left: 30px;
+    }
   }
 `
 
@@ -77,8 +122,14 @@ const svg = css`
 
 const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
   const [modalOpen, setOpenModal] = React.useState(false)
+  const [isFullwidth, setFullwidth] = React.useState(false)
 
   function handleClick() {
+    if (window.innerWidth < 605) {
+      setFullwidth(true)
+    } else {
+      setFullwidth(false)
+    }
     setOpenModal(true)
   }
 
@@ -89,10 +140,17 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
 
   return (
     <div css={wrapper} onClick={handleClick}>
-      <Dialog open={modalOpen} onClose={handleClose}>
+      <Dialog
+        open={modalOpen}
+        onClose={handleClose}
+        maxWidth="lg"
+        fullScreen={isFullwidth}
+      >
         <div css={dialogContent}>
           <div className="contact">
-            <img src={config.image} alt={config.name} />
+            <div className="img-wrapper">
+              <img src={config.image} alt={config.name} />
+            </div>
             <div className="contactInfo">
               <div>
                 <span className="contact-icon">
