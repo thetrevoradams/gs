@@ -17,6 +17,20 @@ const dialogContent = css`
   max-height: 600px;
   flex-wrap: wrap;
 
+  .close-btn {
+    width: 48px;
+    height: 48px;
+    background: #3194d2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
   .contact {
     width: 30%;
     max-width: 200px;
@@ -147,6 +161,9 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
         fullScreen={isFullwidth}
       >
         <div css={dialogContent}>
+          <div className="close-btn" onClick={handleClose}>
+            <Svg icon="CloseX" color="white" scale={0.8} />
+          </div>
           <div className="contact">
             <div className="img-wrapper">
               <img src={config.image} alt={config.name} />
