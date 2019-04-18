@@ -633,6 +633,7 @@ pre tt:after {
 }
 
 .orangeLine {
+  z-index: 10;
   border-bottom: 10px solid var(--orange-color);
 }
 .spacer {
