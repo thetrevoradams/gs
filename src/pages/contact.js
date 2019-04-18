@@ -1,6 +1,4 @@
 import React from 'react' // eslint-disable-line no-unused-vars
-import { withStyles } from '@material-ui/core/styles'
-
 import TextField from '@material-ui/core/TextField'
 import ButtonBase from '@material-ui/core/ButtonBase'
 /** @jsx jsx */
@@ -9,18 +7,6 @@ import { jsx, css } from '@emotion/core'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Svg from '../components/svg'
-
-const styles = theme => ({
-  cssOutlinedInput: {
-    '&$cssInputFocused $notchedOutline': {
-      borderColor: `var(--orange-color) !important`,
-    },
-  },
-
-  cssFocused: { color: `var(--orange-color) !important` },
-  cssInputFocused: {},
-  notchedOutline: {},
-})
 
 const pageLayout = css`
   display: grid;
@@ -141,19 +127,6 @@ const Contact = ({ classes }) => (
               autoComplete="name"
               margin="normal"
               variant="outlined"
-              InputLabelProps={{
-                classes: {
-                  root: classes.cssLabel,
-                  focused: classes.cssFocused,
-                },
-              }}
-              InputProps={{
-                classes: {
-                  root: classes.cssOutlinedInput,
-                  focused: classes.cssInputFocused,
-                  notchedOutline: classes.notchedOutline,
-                },
-              }}
             />
             <TextField
               id="outlined-email-input"
@@ -164,19 +137,6 @@ const Contact = ({ classes }) => (
               margin="normal"
               required
               variant="outlined"
-              InputLabelProps={{
-                classes: {
-                  root: classes.cssLabel,
-                  focused: classes.cssFocused,
-                },
-              }}
-              InputProps={{
-                classes: {
-                  root: classes.cssOutlinedInput,
-                  focused: classes.cssInputFocused,
-                  notchedOutline: classes.notchedOutline,
-                },
-              }}
             />
           </div>
           <TextField
@@ -188,19 +148,6 @@ const Contact = ({ classes }) => (
             rows="8"
             margin="dense"
             variant="outlined"
-            InputLabelProps={{
-              classes: {
-                root: classes.cssLabel,
-                focused: classes.cssFocused,
-              },
-            }}
-            InputProps={{
-              classes: {
-                root: classes.cssOutlinedInput,
-                focused: classes.cssInputFocused,
-                notchedOutline: classes.notchedOutline,
-              },
-            }}
           />
 
           <ButtonBase variant="contained" css={submitBtn}>
@@ -240,4 +187,4 @@ const Contact = ({ classes }) => (
   </Layout>
 )
 
-export default withStyles(styles)(Contact)
+export default Contact
