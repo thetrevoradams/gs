@@ -10,6 +10,18 @@ const wrapper = css`
   position: relative;
 `
 
+const dialogContent = css`
+  display: flex;
+  .contact {
+    flex: 1;
+  }
+  .bio {
+    padding: 10px;
+    font-size: 16px;
+    flex: 1;
+  }
+`
+
 const img = css`
   max-width: 220px;
   max-height: 220px;
@@ -42,9 +54,18 @@ const LeadershipSpotlight = ({ config = { bioName: '' } }) => {
   return (
     <div css={wrapper} onClick={handleClick}>
       <Dialog open={modalOpen} onClose={handleClose}>
-        {Bios[config.bioName].map(text => (
-          <p>{text}</p>
-        ))}
+        <div css={dialogContent}>
+          <div className="contact">
+            <img src={config.image} alt={config.name} />
+          </div>
+          <div className="bio">
+            <h3>{config.name}</h3>
+            <h4>{config.position}</h4>
+            {Bios[config.bioName].map(text => (
+              <p>{text}</p>
+            ))}
+          </div>
+        </div>
       </Dialog>
 
       <img css={img} src={config.image} alt={config.name} />
