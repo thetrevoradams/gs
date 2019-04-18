@@ -59,10 +59,17 @@ const sidebarStyles = css`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 25px 0 0 25px;
+
+    & * {
+      width: 100%;
+      padding: 5px 0 0 25px;
+    }
+    & strong {
+      padding: 20px 0 0 25px;
+    }
 
     & span {
-      margin: 5px 0 0 25px;
+      padding: 5px 0 0 50px;
       font-size: 16px;
     }
   }

@@ -36,11 +36,8 @@ body {
   background-color: #191c1d;
   min-width: 250px;
   width: 50vw;
-  min-width: 250px;
 }
-.sidebar div:last-of-type div {
-  margin-left: 15px;
-}
+
 .subNavLink {
   padding: 0 5px 15px 5px;
   text-decoration: none;
