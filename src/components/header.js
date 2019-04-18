@@ -56,7 +56,7 @@ const hideOnMobile = css`
 
 const heroTextContainer = css`
   position: absolute;
-  top: 200px;
+  top: 38%;
   left: 10px;
   right: 10px;
   color: #fff;
@@ -111,7 +111,6 @@ const navStyles = css`
 
   @media (max-width: 975px) {
     justify-content: space-between;
-    max-width: 750px;
   }
 `
 const noLinkStyles = css`
@@ -130,10 +129,10 @@ const mobileMenu = css`
 
   @media (max-width: 975px) {
     display: block;
-    margin-right: 30px;
+    margin: 5px 30px 0 0;
   }
   @media (max-width: 400px) {
-    margin-right: 20px;
+    margin: 10px 20px 0 0;
   }
 `
 const mobileLogo = css`
@@ -146,6 +145,9 @@ const mobileLogo = css`
     transform: scale(0.65, 0.65);
     margin-left: -55px;
   }
+`
+const serviceContainer = css`
+  display: flex;
 `
 
 const Header = ({ lightBackground = false, openSidebar }) => {
@@ -179,7 +181,7 @@ const Header = ({ lightBackground = false, openSidebar }) => {
         >
           <span>About</span>
         </Link>
-        <div style={{ display: 'flex' }}>
+        <div css={[serviceContainer, hideOnMobile]}>
           <span
             aria-haspopup="true"
             css={hideOnMobile}
