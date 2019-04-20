@@ -100,6 +100,10 @@ const contactLine = css`
   margin-bottom: 20px;
   font-size: 14px;
 
+  & svg {
+    height: 27px;
+    width: 27px;
+  }
   & a {
     color: #403a34;
     text-decoration: none;
@@ -125,7 +129,7 @@ const Contact = ({ classes }) => (
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          action='/success'
+          action="/success"
         >
           <div css={inputContainer}>
             <input type="hidden" name="form-name" value="contact" />

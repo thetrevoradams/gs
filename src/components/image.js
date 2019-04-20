@@ -17,6 +17,10 @@ import { jsx, css } from '@emotion/core'
 const imageStyling = css`
   z-index: -10;
   height: calc(70vh - 18px);
+
+  @media (max-width: 700px) {
+    height: 400px;
+  }
 `
 
 const overlay = css`
@@ -28,6 +32,10 @@ const overlay = css`
   right: 0;
   height: calc(70vh - 18px);
   background: rgba(0, 0, 0, 0.67);
+
+  @media (max-width: 700px) {
+    height: 400px;
+  }
 `
 
 const Image = () => (

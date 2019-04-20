@@ -25,8 +25,8 @@ const headerStyles = css`
   @media (max-width: 900px) {
     height: calc(68vh - 130px);
   }
-  @media (max-width: 450px) {
-    height: calc(68vh - 132px);
+  @media (max-width: 700px) {
+    height: 275px;
   }
 `
 const subnavOptions = css`
@@ -137,6 +137,10 @@ const mobileMenu = css`
   @media (max-width: 400px) {
     margin: 10px 20px 0 0;
   }
+  @media (max-width: 400px) {
+    position: absolute;
+    right: 0;
+  }
 `
 const mobileLogo = css`
   transition: all 0.25s ease-in-out;
@@ -147,6 +151,10 @@ const mobileLogo = css`
   @media (max-width: 400px) {
     transform: scale(0.65, 0.65);
     margin-left: -55px;
+  }
+  @media (max-width: 375px) {
+    transform: scale(0.55, 0.55);
+    margin-left: -70px;
   }
 `
 const serviceContainer = css`
