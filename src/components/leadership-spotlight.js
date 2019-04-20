@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react' // eslint-disable-line no-unused-vars
 import Dialog from '@material-ui/core/Dialog'
+
 import Bios from '../biographies/bios'
 import Svg from './svg'
 
@@ -12,10 +13,12 @@ const wrapper = css`
 `
 
 const dialogContent = css`
+  position: relative;
   display: flex;
-  overflow: hidden;
-  max-height: 600px;
+  max-height: 90vh;
   flex-wrap: wrap;
+  max-width: 1110px;
+  width: 100vw;
 
   .close-btn {
     width: 48px;
@@ -26,33 +29,34 @@ const dialogContent = css`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    right: 5px;
-    top: 5px;
   }
 
   .contact {
-    width: 30%;
-    max-width: 200px;
+    width: 34%;
     background-color: #060606;
-    font-size: 14px;
+    font-size: 16px;
+    z-index: 10;
   }
 
   .img-wrapper {
     width: 100%;
+    overflow: hidden;
   }
 
   .contact img {
     width: 100%;
+    border-top-left-radius: 4px;
   }
 
   .contactInfo div {
     color: #fdfdfd;
     display: flex;
     align-items: center;
+    margin-top: 20px;
   }
 
   .contactInfo {
+    margin: 0 0 40px 10px;
     a {
       text-decoration: none;
       color: inherit;
@@ -69,18 +73,60 @@ const dialogContent = css`
     font-size: 16px;
     flex: 1;
     overflow-y: scroll;
-  }
 
-  h3 {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
-  }
+    * {
+      font-family: 'Montserrat', sans-serif;
+      color: #403a34;
+    }
+    h3 {
+      margin-bottom: 10px;
+      margin-top: 20px;
+      font-size: 38px;
+    }
 
-  h4 {
-    font-family: 'Montserrat', sans-serif;
-    color: #403a34;
-    font-weight: normal;
-    margin-top: 0px;
+    h4 {
+      font-weight: normal;
+      margin-top: 0px;
+      font-size: 22px;
+    }
+    .bioTextContainer {
+      height: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding-top: 150px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      max-width: 650px;
+
+      @media (max-width: 1200px) {
+        width: 49vw;
+      }
+      @media (max-width: 900px) {
+        width: 47vw;
+      }
+    }
+    .bioTextScrollContainer {
+      position: relative;
+      max-height: 100%;
+      overflow: auto;
+      & p:last-of-type {
+        margin-bottom: 130px;
+      }
+    }
+    .bioText {
+      font-weight: 300;
+      font-size: 16px;
+      /* margin-bottom: 20px; */
+    }
+    .bioHeader {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      & > div:first-of-type {
+        flex: 1;
+      }
+    }
   }
 
   @media (max-width: 795px), (max-height: 590px) {
@@ -133,13 +179,25 @@ const svg = css`
   top: 185px;
   left: 190px;
 `
+const bioOverlay = css`
+  position: absolute;
+  bottom: 0;
+  height: 125px;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9) 49.83%,
+    rgba(255, 255, 255, 0) 148.4%
+  );
+  transform: rotate(-180deg);
+`
 
 const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
   const [modalOpen, setOpenModal] = React.useState(false)
   const [isFullwidth, setFullwidth] = React.useState(false)
 
   function handleClick() {
-    if (window.innerWidth < 605) {
+    if (window.innerWidth < 795) {
       setFullwidth(true)
     } else {
       setFullwidth(false)
@@ -161,9 +219,6 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
         fullScreen={isFullwidth}
       >
         <div css={dialogContent}>
-          <div className="close-btn" onClick={handleClose}>
-            <Svg icon="CloseX" color="white" scale={0.8} />
-          </div>
           <div className="contact">
             <div className="img-wrapper">
               <img src={config.image} alt={config.name} />
@@ -171,7 +226,7 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
             <div className="contactInfo">
               <div>
                 <span className="contact-icon">
-                  <Svg icon="Phone" color="#3194D2" scale={0.8} />
+                  <Svg icon="Phone" color="#3194D2" />
                 </span>
                 <span>
                   <a href={`telto:${config.phone.split('.').join('-')}`}>
@@ -181,13 +236,13 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
               </div>
               <div>
                 <span className="contact-icon">
-                  <Svg icon="Fax" color="#3194D2" scale={0.8} />
+                  <Svg icon="Fax" color="#3194D2" />
                 </span>
                 <span>{config.fax}</span>
               </div>
               <div>
                 <span className="contact-icon">
-                  <Svg icon="Email" color="#3194D2" scale={0.8} />
+                  <Svg icon="Email" color="#3194D2" />
                 </span>
                 <span>
                   <a href={`mailto:${config.email}`}>{config.email}</a>
@@ -195,19 +250,33 @@ const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
               </div>
               <div>
                 <span className="contact-icon">
-                  <Svg icon="Download" color="#3194D2" scale={0.8} />
+                  <Svg icon="Download" color="#3194D2" />
                 </span>
                 vcard
               </div>
             </div>
           </div>
           <div className="bio">
-            <h3>{config.name}</h3>
-            <h4>{config.position}</h4>
-            {Bios[config.bioName].map(text => (
-              <p>{text}</p>
-            ))}
+            <div className="bioHeader">
+              <div>
+                <h3>{config.name}</h3>
+                <h4>{config.position}</h4>
+              </div>
+              <div className="close-btn" onClick={handleClose}>
+                <Svg icon="CloseX" color="white" scale={0.8} />
+              </div>
+            </div>
+            <div className="bioTextContainer">
+              <div className="bioTextScrollContainer">
+                {Bios[config.bioName].map((text, index) => (
+                  <p key={`${config.name}${index}`} className="bioText">
+                    {text}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
+          <div css={bioOverlay} />
         </div>
       </Dialog>
 

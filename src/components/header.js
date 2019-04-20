@@ -11,7 +11,7 @@ const headerStyles = css`
   position: relative;
   color: #fdfdfd;
   font-size: 18px;
-  height: calc(68vh - 126px);
+  height: calc(68vh - 127px);
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.8) -9.48%,
