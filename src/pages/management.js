@@ -2,7 +2,10 @@ import React from 'react' // eslint-disable-line no-unused-vars
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import LeadershipBioDialog from '../components/leadership-bio-dialog'
+import LeadershipSpotlight from '../components/leadership-spotlight'
+import Dialog from '@material-ui/core/Dialog'
+import Svg from '../components/svg'
+import Bios from '../biographies/bios'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import bioList from '../biographies/bioConfig'
@@ -48,57 +51,195 @@ const bioButton = css`
   position: relative;
   margin-bottom: 40px;
   font-size: 18px;
+`
 
-  .imageWrapper {
-    height: 220px;
-    width: 220px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 10px;
+const dialogContent = css`
+  display: flex;
+  max-height: 600px;
+  max-width: 700px;
+  flex-wrap: wrap;
 
-    img[data-bioname='sam'] {
-      margin-top: -15px;
-    }
-  }
-  .arrowFab {
-    position: absolute;
-    bottom: 70px;
-    left: 170px;
-    border-radius: 50%;
-    background-color: #fdfdfd;
-    height: 70px;
-    width: 70px;
+  .close-btn {
+    width: 48px;
+    height: 48px;
+    background: #3194d2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    svg {
-      position: relative;
-      top: 25px;
-      left: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
+  .contact {
+    width: 30%;
+    max-width: 200px;
+    background-color: #060606;
+    font-size: 14px;
+  }
+
+  .img-wrapper {
+    width: 100%;
+  }
+
+  .contact img {
+    width: 100%;
+  }
+
+  .contactInfo div {
+    color: #fdfdfd;
+    display: flex;
+    align-items: center;
+  }
+
+  .contactInfo {
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
   }
-  .name {
-    font-weight: bold;
+
+  .contact-icon {
+    padding: 5px 10px;
+  }
+
+  .bio {
+    padding: 20px 40px;
+    font-size: 16px;
+    flex: 1;
+    max-height: 600px;
+    overflow-y: scroll;
+  }
+
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #403a34;
+    font-weight: normal;
+    margin-top: 0px;
+  }
+
+  @media (max-width: 795px), (max-height: 590px) {
+    .contact {
+      width: 100%;
+      max-width: none;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .img-wrapper {
+      max-width: 200px;
+    }
+
+    overflow: scroll;
+  }
+
+  @media (max-width: 640px) {
+    .img-wrapper {
+      margin: auto;
+    }
+
+    .contactInfo {
+      margin-left: 30px;
+    }
   }
 `
 
 const Management = () => {
-  const [bioSelection, setBioSelection] = React.useState({})
-  const [dialogOpen, setDialogOpen] = React.useState(false)
+  const [modalOpen, setOpenModal] = React.useState(false)
+  const [isFullwidth, setFullwidth] = React.useState(false)
+  const [config, setConfig] = React.useState({
+    image: brian,
+    name: 'Brian Evans',
+    position: 'Managing Partner',
+    bioName: 'brian',
+    phone: '480.924.6499',
+    fax: '480.240.4187',
+    email: 'bevans@guaranty-solutions.com',
+  })
 
-  const assignBio = bioName => {
-    let config = bioList.find(bio => bio.bioName === bioName)
-    if (config) {
-      config.image = bioImages[bioName]
-      console.log('config', config)
-      setBioSelection(config)
-      setDialogOpen(true)
+  function openDialog(config) {
+    setConfig(config)
+    if (window.innerWidth < 605) {
+      setFullwidth(true)
+    } else {
+      setFullwidth(false)
     }
+    setOpenModal(true)
   }
-  const dialogCloseHandler = () => {
-    setDialogOpen(false)
+
+  function handleClose() {
+    setOpenModal(false)
   }
+
   return (
     <Layout>
       <SEO title="Management" />
+      <Dialog
+        open={modalOpen}
+        onClose={handleClose}
+        onBackdropClick={handleClose}
+        maxWidth="lg"
+        fullScreen={isFullwidth}
+      >
+        <div css={dialogContent}>
+          <div className="close-btn" onClick={handleClose}>
+            <Svg icon="CloseX" color="white" scale={0.8} />
+          </div>
+          <div className="contact">
+            <div className="img-wrapper">
+              <img src={config.image} alt={config.name} />
+            </div>
+            <div className="contactInfo">
+              <div>
+                <span className="contact-icon">
+                  <Svg icon="Phone" color="#3194D2" scale={0.8} />
+                </span>
+                <span>
+                  <a href={`telto:${config.phone.split('.').join('-')}`}>
+                    {config.phone}
+                  </a>
+                </span>
+              </div>
+              <div>
+                <span className="contact-icon">
+                  <Svg icon="Fax" color="#3194D2" scale={0.8} />
+                </span>
+                <span>{config.fax}</span>
+              </div>
+              <div>
+                <span className="contact-icon">
+                  <Svg icon="Email" color="#3194D2" scale={0.8} />
+                </span>
+                <span>
+                  <a href={`mailto:${config.email}`}>{config.email}</a>
+                </span>
+              </div>
+              <div>
+                <span className="contact-icon">
+                  <Svg icon="Download" color="#3194D2" scale={0.8} />
+                </span>
+                vcard
+              </div>
+            </div>
+          </div>
+          <div className="bio">
+            <h3>{config.name}</h3>
+            <h4>{config.position}</h4>
+            {Bios[config.bioName].map(text => (
+              <p>{text}</p>
+            ))}
+          </div>
+        </div>
+      </Dialog>
       <main className="textContainer">
         <h1 css={title}>Management</h1>
         <p css={sub}>
@@ -107,33 +248,55 @@ const Management = () => {
         </p>
 
         <div css={grid}>
-          {bioList.map(({ name, position, bioName }) => (
-            <div css={bioButton} key={name}>
-              <div
-                className="imageWrapper"
-                role="button"
-                onClick={() => assignBio(bioName)}
-              >
-                <img
-                  src={bioImages[bioName]}
-                  alt={name}
-                  data-bioname={bioName}
-                />
-                <div className="arrowFab">
-                  <Svg icon="ArrowRight" color="#3194D2" />
-                </div>
-              </div>
-              <div className="name">{name}</div>
-              <div className="position">{position}</div>
-            </div>
-          ))}
+          <LeadershipSpotlight
+            config={{
+              image: brian,
+              name: 'Brian Evans',
+              position: 'Managing Partner',
+              bioName: 'brian',
+              phone: '480.924.6499',
+              fax: '480.240.4187',
+              email: 'bevans@guaranty-solutions.com',
+            }}
+            handleClick={openDialog}
+          />
+          <LeadershipSpotlight
+            config={{
+              image: guy,
+              name: 'Guy Adams',
+              position: 'Chief Information Officer',
+              bioName: 'guy',
+              phone: '480.924.6499',
+              fax: '480.240.4187',
+              email: 'gadams@guaranty-solutions.com',
+            }}
+            handleClick={openDialog}
+          />
+          <LeadershipSpotlight
+            config={{
+              image: dustin,
+              name: 'Dustin Horne',
+              position: 'General Counsel',
+              bioName: 'dustin',
+              phone: '480.924.6499',
+              fax: '480.240.4187',
+              email: 'dhorne@guaranty-solutions.com',
+            }}
+            handleClick={openDialog}
+          />
+          <LeadershipSpotlight
+            config={{
+              image: sam,
+              name: 'Sam Lewis',
+              position: 'Director of Research',
+              bioName: 'sam',
+              phone: '480.924.6499',
+              fax: '480.240.4187',
+              email: 'slewis@guaranty-solutions.com',
+            }}
+            handleClick={openDialog}
+          />
         </div>
-
-        <LeadershipBioDialog
-          config={bioSelection}
-          dialogOpen={dialogOpen}
-          dialogCloseHandler={dialogCloseHandler}
-        />
 
         <p css={desc}>
           Combined, our team has more than 70 years of experience in the
