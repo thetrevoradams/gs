@@ -6,7 +6,6 @@ import { jsx, css } from '@emotion/core'
 const wrapper = css`
   padding: 50px;
   position: relative;
-  cursor: pointer;
 `
 
 const imgCrop = css`
@@ -20,17 +19,20 @@ const img = css`
   max-width: 220px;
   margin-top: -10px;
   margin-left: -10px;
+  cursor: pointer;
 `
 
 const name = css`
   font-weight: bold;
   font-size: 18px;
+  cursor: pointer;
 `
 
 const svg = css`
   position: absolute;
   top: 185px;
   left: 190px;
+  cursor: pointer;
 `
 const bioOverlay = css`
   position: absolute;
