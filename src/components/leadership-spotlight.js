@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react' // eslint-disable-line no-unused-vars
-import Dialog from '@material-ui/core/Dialog'
-import Bios from '../biographies/bios'
-import Svg from './svg'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
@@ -9,105 +6,6 @@ import { jsx, css } from '@emotion/core'
 const wrapper = css`
   padding: 50px;
   position: relative;
-`
-
-const dialogContent = css`
-  display: flex;
-  overflow: hidden;
-  max-height: 600px;
-  flex-wrap: wrap;
-
-  .close-btn {
-    width: 48px;
-    height: 48px;
-    background: #3194d2;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-  }
-
-  .contact {
-    width: 30%;
-    max-width: 200px;
-    background-color: #060606;
-    font-size: 14px;
-  }
-
-  .img-wrapper {
-    width: 100%;
-  }
-
-  .contact img {
-    width: 100%;
-  }
-
-  .contactInfo div {
-    color: #fdfdfd;
-    display: flex;
-    align-items: center;
-  }
-
-  .contactInfo {
-    a {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-    }
-  }
-
-  .contact-icon {
-    padding: 5px 10px;
-  }
-
-  .bio {
-    padding: 20px 40px;
-    font-size: 16px;
-    flex: 1;
-    overflow-y: scroll;
-  }
-
-  h3 {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
-  }
-
-  h4 {
-    font-family: 'Montserrat', sans-serif;
-    color: #403a34;
-    font-weight: normal;
-    margin-top: 0px;
-  }
-
-  @media (max-width: 795px), (max-height: 590px) {
-    .contact {
-      width: 100%;
-      max-width: none;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .img-wrapper {
-      max-width: 200px;
-    }
-
-    overflow: scroll;
-  }
-
-  @media (max-width: 640px) {
-    .img-wrapper {
-      margin: auto;
-    }
-
-    .contactInfo {
-      margin-left: 30px;
-    }
-  }
 `
 
 const imgCrop = css`
@@ -134,87 +32,19 @@ const svg = css`
   left: 190px;
 `
 
-const LeadershipSpotlight = ({ config = { bioName: '', phone: '' } }) => {
-  const [modalOpen, setOpenModal] = React.useState(false)
-  const [isFullwidth, setFullwidth] = React.useState(false)
-
-  function handleClick() {
-    if (window.innerWidth < 605) {
-      setFullwidth(true)
-    } else {
-      setFullwidth(false)
-    }
-    setOpenModal(true)
+const LeadershipSpotlight = ({
+  config = { bioName: '', phone: '' },
+  handleClick = function() {},
+}) => {
+  function _handleClick() {
+    handleClick(config)
   }
-
-  function handleClose() {
-    setOpenModal(false)
-  }
-
   return (
     <div css={wrapper}>
-      <Dialog
-        open={modalOpen}
-        onClose={handleClose}
-        onBackdropClick={handleClose}
-        maxWidth="lg"
-        fullScreen={isFullwidth}
-      >
-        <div css={dialogContent}>
-          <div className="close-btn" onClick={handleClose}>
-            <Svg icon="CloseX" color="white" scale={0.8} />
-          </div>
-          <div className="contact">
-            <div className="img-wrapper">
-              <img src={config.image} alt={config.name} />
-            </div>
-            <div className="contactInfo">
-              <div>
-                <span className="contact-icon">
-                  <Svg icon="Phone" color="#3194D2" scale={0.8} />
-                </span>
-                <span>
-                  <a href={`telto:${config.phone.split('.').join('-')}`}>
-                    {config.phone}
-                  </a>
-                </span>
-              </div>
-              <div>
-                <span className="contact-icon">
-                  <Svg icon="Fax" color="#3194D2" scale={0.8} />
-                </span>
-                <span>{config.fax}</span>
-              </div>
-              <div>
-                <span className="contact-icon">
-                  <Svg icon="Email" color="#3194D2" scale={0.8} />
-                </span>
-                <span>
-                  <a href={`mailto:${config.email}`}>{config.email}</a>
-                </span>
-              </div>
-              <div>
-                <span className="contact-icon">
-                  <Svg icon="Download" color="#3194D2" scale={0.8} />
-                </span>
-                vcard
-              </div>
-            </div>
-          </div>
-          <div className="bio">
-            <h3>{config.name}</h3>
-            <h4>{config.position}</h4>
-            {Bios[config.bioName].map(text => (
-              <p>{text}</p>
-            ))}
-          </div>
-        </div>
-      </Dialog>
-
-      <div css={imgCrop} onClick={handleClick}>
+      <div css={imgCrop} onClick={_handleClick}>
         <img
           css={img}
-          style={config.name === 'Sam Evans' ? { marginTop: -30 } : {}}
+          style={config.name === 'Sam Lewis' ? { marginTop: -30 } : {}}
           src={config.image}
           alt={config.name}
         />
