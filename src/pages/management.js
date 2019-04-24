@@ -13,7 +13,6 @@ import brian from '../images/Brian.jpg'
 import guy from '../images/Guy.jpg'
 import dustin from '../images/Dustin.jpg'
 import sam from '../images/Sam.png'
-import Svg from '../components/svg'
 
 const bioImages = {
   brian,
