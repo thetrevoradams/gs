@@ -6,6 +6,7 @@ import { jsx, css } from '@emotion/core'
 const wrapper = css`
   padding: 50px;
   position: relative;
+  cursor: pointer;
 `
 
 const imgCrop = css`
@@ -52,8 +53,8 @@ const LeadershipSpotlight = ({
     handleClick(config)
   }
   return (
-    <div css={wrapper}>
-      <div css={imgCrop} onClick={_handleClick}>
+    <div css={wrapper} onClick={_handleClick}>
+      <div css={imgCrop}>
         <img
           css={img}
           style={config.name === 'Sam Lewis' ? { marginTop: -30 } : {}}
