@@ -12,6 +12,10 @@ import brian from '../images/Brian.jpg'
 import guy from '../images/Guy.jpg'
 import dustin from '../images/Dustin.jpg'
 import sam from '../images/Sam.png'
+import brianVcard from '../biographies/brian.vcf'
+import guyVcard from '../biographies/guy.vcf'
+import dustinVcard from '../biographies/dustin.vcf'
+import samVcard from '../biographies/sam.vcf'
 
 const title = css`
   text-align: center;
@@ -206,6 +210,7 @@ const Management = () => {
     phone: '480.924.6499',
     fax: '480.240.4187',
     email: 'bevans@guaranty-solutions.com',
+    vCard: brianVcard,
   })
 
   function openDialog(config) {
@@ -237,10 +242,7 @@ const Management = () => {
         }}
       >
         <div css={dialogContent}>
-          <div
-            className="close-btn"
-            onClick={handleClose}
-          >
+          <div className="close-btn" onClick={handleClose}>
             <Svg icon="CloseX" color="white" />
           </div>
           <div className="contact">
@@ -279,10 +281,12 @@ const Management = () => {
                 </span>
               </div>
               <div>
-                <span className="contact-icon">
-                  <Svg icon="Download" color="#3194D2" scale={0.8} />
-                </span>
-                vcard
+                <a href={config.vCard} download>
+                  <span className="contact-icon">
+                    <Svg icon="Download" color="#3194D2" scale={0.8} />
+                  </span>
+                  vcard
+                </a>
               </div>
             </div>
           </div>
@@ -317,6 +321,7 @@ const Management = () => {
               phone: '480.924.6499',
               fax: '480.240.4187',
               email: 'bevans@guaranty-solutions.com',
+              vCard: brianVcard,
             }}
             handleClick={openDialog}
           />
@@ -329,6 +334,7 @@ const Management = () => {
               phone: '480.924.6499',
               fax: '480.240.4187',
               email: 'gadams@guaranty-solutions.com',
+              vCard: guyVcard,
             }}
             handleClick={openDialog}
           />
@@ -341,6 +347,7 @@ const Management = () => {
               phone: '480.924.6499',
               fax: '480.240.4187',
               email: 'dhorne@guaranty-solutions.com',
+              vCard: dustinVcard,
             }}
             handleClick={openDialog}
           />
@@ -353,6 +360,7 @@ const Management = () => {
               phone: '480.924.6499',
               fax: '480.240.4187',
               email: 'slewis@guaranty-solutions.com',
+              vCard: samVcard,
             }}
             handleClick={openDialog}
           />
