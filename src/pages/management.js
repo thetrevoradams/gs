@@ -8,18 +8,11 @@ import Svg from '../components/svg'
 import Bios from '../biographies/bios'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
-import bioList from '../biographies/bioConfig'
 import brian from '../images/Brian.jpg'
 import guy from '../images/Guy.jpg'
 import dustin from '../images/Dustin.jpg'
 import sam from '../images/Sam.png'
 
-const bioImages = {
-  brian,
-  guy,
-  dustin,
-  sam,
-}
 const title = css`
   text-align: center;
 `
@@ -46,16 +39,23 @@ const grid = css`
     justify-content: center;
   }
 `
-const bioButton = css`
-  position: relative;
-  margin-bottom: 40px;
-  font-size: 18px;
+const bioOverlay = css`
+  position: absolute;
+  bottom: 0;
+  height: 125px;
+  width: calc(100% - 350px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9) 49.83%,
+    rgba(255, 255, 255, 0) 148.4%
+  );
+  transform: rotate(-180deg);
 `
 
 const dialogContent = css`
   display: flex;
   max-height: 600px;
-  max-width: 700px;
+  max-width: 900px;
   flex-wrap: wrap;
 
   .close-btn {
@@ -70,17 +70,20 @@ const dialogContent = css`
     position: absolute;
     right: 5px;
     top: 5px;
+    z-index: 10;
   }
 
   .contact {
-    width: 30%;
-    max-width: 200px;
+    width: 45%;
+    max-width: 300px;
     background-color: #060606;
     font-size: 14px;
   }
 
   .img-wrapper {
     width: 100%;
+    max-height: 400px;
+    overflow: hidden;
   }
 
   .contact img {
@@ -88,12 +91,15 @@ const dialogContent = css`
   }
 
   .contactInfo div {
-    color: #fdfdfd;
     display: flex;
     align-items: center;
   }
 
   .contactInfo {
+    * {
+      color: #fdfdfd;
+    }
+    margin: 10px 0 0 10px;
     a {
       text-decoration: none;
       color: inherit;
@@ -111,6 +117,10 @@ const dialogContent = css`
     flex: 1;
     max-height: 600px;
     overflow-y: scroll;
+
+    p:last-of-type {
+      margin-bottom: 130px;
+    }
   }
 
   h3 {
@@ -132,22 +142,55 @@ const dialogContent = css`
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      overflow: scroll;
+    }
+    .contactInfo {
+      h3,
+      h4 {
+        padding-left: 10px;
+      }
     }
 
     .img-wrapper {
-      max-width: 200px;
+      width: unset;
+      max-height: 360px;
+
+      img {
+        width: unset;
+      }
+
+      img[alt='Sam Lewis'] {
+        object-position: 0 -45px;
+      }
     }
 
-    overflow: scroll;
+    .bio {
+      overflow: unset;
+
+      p:last-of-type {
+        margin-bottom: 100px;
+      }
+    }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 555px) {
+    .contactInfo,
     .img-wrapper {
-      margin: auto;
+      margin: 0 auto;
     }
-
     .contactInfo {
-      margin-left: 30px;
+      margin-top: 15px;
+    }
+    .img-wrapper {
+      width: 60%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 380px) {
+    .img-wrapper {
+      width: 100%;
     }
   }
 `
@@ -167,7 +210,7 @@ const Management = () => {
 
   function openDialog(config) {
     setConfig(config)
-    if (window.innerWidth < 605) {
+    if (window.innerWidth <= 795) {
       setFullwidth(true)
     } else {
       setFullwidth(false)
@@ -188,16 +231,29 @@ const Management = () => {
         onBackdropClick={handleClose}
         maxWidth="lg"
         fullScreen={isFullwidth}
+        style={{
+          overflowScrolling: 'touch',
+          WebkitOverflowScrolling: 'touch',
+        }}
       >
         <div css={dialogContent}>
-          <div className="close-btn" onClick={handleClose}>
-            <Svg icon="CloseX" color="white" scale={0.8} />
+          <div
+            className="close-btn"
+            onClick={handleClose}
+          >
+            <Svg icon="CloseX" color="white" />
           </div>
           <div className="contact">
             <div className="img-wrapper">
               <img src={config.image} alt={config.name} />
             </div>
             <div className="contactInfo">
+              {isFullwidth ? (
+                <>
+                  <h3>{config.name}</h3>
+                  <h4>{config.position}</h4>
+                </>
+              ) : null}
               <div>
                 <span className="contact-icon">
                   <Svg icon="Phone" color="#3194D2" scale={0.8} />
@@ -231,11 +287,16 @@ const Management = () => {
             </div>
           </div>
           <div className="bio">
-            <h3>{config.name}</h3>
-            <h4>{config.position}</h4>
-            {Bios[config.bioName].map(text => (
-              <p>{text}</p>
+            {isFullwidth ? null : (
+              <>
+                <h3>{config.name}</h3>
+                <h4>{config.position}</h4>
+              </>
+            )}
+            {Bios[config.bioName].map((text, index) => (
+              <p key={`${config.bioName}${index}`}>{text}</p>
             ))}
+            {isFullwidth ? null : <div css={bioOverlay} />}
           </div>
         </div>
       </Dialog>

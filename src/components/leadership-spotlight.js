@@ -23,6 +23,7 @@ const img = css`
 `
 
 const name = css`
+  margin-top: 15px;
   font-weight: bold;
   font-size: 18px;
   cursor: pointer;
@@ -33,18 +34,6 @@ const svg = css`
   top: 185px;
   left: 190px;
   cursor: pointer;
-`
-const bioOverlay = css`
-  position: absolute;
-  bottom: 0;
-  height: 125px;
-  width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.9) 49.83%,
-    rgba(255, 255, 255, 0) 148.4%
-  );
-  transform: rotate(-180deg);
 `
 
 const LeadershipSpotlight = ({
