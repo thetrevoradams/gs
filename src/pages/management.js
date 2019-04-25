@@ -259,7 +259,7 @@ const Management = () => {
                   <Svg icon="Phone" color="#3194D2" scale={0.8} />
                 </span>
                 <span>
-                  <a href={`telto:${config.phone.split('.').join('-')}`}>
+                  <a href={`tel:${config.phone.split('.').join('-')}`}>
                     {config.phone}
                   </a>
                 </span>
