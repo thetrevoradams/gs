@@ -94,9 +94,12 @@ const dialogContent = css`
     width: 100%;
   }
 
-  .contactInfo div {
-    display: flex;
-    align-items: center;
+  .contactInfo {
+    div,
+    div a {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .contactInfo {
