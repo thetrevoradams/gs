@@ -46,7 +46,7 @@ const IndexPage = () => (
       <main style={{ margin: '0 auto' }}>
         <div css={tagLine} className="flex row center">
           <span>
-            We turn your <b>write-offs</b> into <b>revenue!</b>
+            We turn your <b>write offs</b> into <b>revenue!</b>
           </span>
         </div>
         <div className="flex center wrap">
