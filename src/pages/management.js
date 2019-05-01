@@ -75,6 +75,7 @@ const dialogContent = css`
     right: 5px;
     top: 5px;
     z-index: 10;
+    cursor: pointer;
   }
 
   .contact {
@@ -216,6 +217,35 @@ const Management = () => {
     vCard: brianVcard,
   })
 
+  function resizeLogic() {
+    if (window.innerWidth < 795) {
+      setFullwidth(true)
+    } else {
+      setFullwidth(false)
+    }
+  }
+
+  React.useEffect(() => {
+    const handleResize = debounce(resizeLogic, 200)
+    window.addEventListener('resize', handleResize)
+  }, [])
+
+  function debounce(func, wait, immediate) {
+    var timeout
+    return function() {
+      var context = this,
+        args = arguments
+      var later = function() {
+        timeout = null
+        if (!immediate) func.apply(context, args)
+      }
+      var callNow = immediate && !timeout
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+      if (callNow) func.apply(context, args)
+    }
+  }
+
   function openDialog(config) {
     setConfig(config)
     if (window.innerWidth <= 795) {
@@ -288,7 +318,7 @@ const Management = () => {
                   <span className="contact-icon">
                     <Svg icon="Download" color="#3194D2" scale={0.8} />
                   </span>
-                  vcard
+                  Add to contacts
                 </a>
               </div>
             </div>
