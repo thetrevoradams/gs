@@ -81,16 +81,13 @@ const wrapper = css`
   td:nth-of-type(3),
   td:nth-of-type(4) {
     width: 120px;
-    position: relative;
     text-align: center;
   }
 
   td:nth-of-type(2) svg,
   td:nth-of-type(3) svg,
   td:nth-of-type(4) svg {
-    position: absolute;
-    bottom: 2px;
-    left: calc(50% - 7px);
+    vertical-align: bottom;
   }
 
   .rowHeader {
