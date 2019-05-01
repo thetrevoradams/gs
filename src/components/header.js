@@ -104,7 +104,7 @@ const navStyles = css`
   padding: 25px 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-content: center;
   font-weight: 500;
   margin: 0 auto;
