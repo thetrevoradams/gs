@@ -105,6 +105,7 @@ const dialogContent = css`
 
   .contactInfo {
     * {
+      text-decoration: none;
       color: #fdfdfd;
     }
     margin: 10px 0 0 10px;
