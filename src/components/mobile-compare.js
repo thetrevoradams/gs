@@ -201,7 +201,7 @@ const MobileCompare = () => {
             </div>
             <div className="rowSub">
               <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
-              Garishment
+              Garnishment
             </div>
             <div className="rowSub">
               <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
