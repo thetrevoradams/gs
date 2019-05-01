@@ -156,7 +156,7 @@ const Comparison = () => (
           <td>
             <span className="rowSub">
               <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
-              Links to relavent documents
+              Links to relevant documents
             </span>
           </td>
           <td>
