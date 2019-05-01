@@ -99,6 +99,7 @@ const contactLine = css`
   align-content: center;
   margin-bottom: 20px;
   font-size: 14px;
+  text-decoration: none;
 
   & svg {
     height: 27px;
