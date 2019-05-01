@@ -72,7 +72,7 @@ const AboutUs = () => (
       </div>
       <p style={{ fontWeight: 500 }} css={topSpace}>
         It is easy to see that we truly …{' '}
-        <span css={orange}>Turn your write-offs into revenue!</span>
+        <span css={orange}>Turn your write offs into revenue!</span>
       </p>
     </main>
   </Layout>
