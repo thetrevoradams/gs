@@ -8,7 +8,7 @@ import Svg from '../components/svg'
 import Bios from '../biographies/bios'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
-import brian from '../images/Brian.jpg'
+import brian from '../images/Brian.png'
 import guy from '../images/Guy.jpg'
 import dustin from '../images/Dustin.jpg'
 import sam from '../images/Sam.png'
