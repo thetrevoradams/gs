@@ -61,13 +61,7 @@ const Email = ({ scale, color }) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <path
-      d="M22 6l-10 7L2 6"
-      stroke={color}
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M22 6l-10 7L2 6" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 const Download = ({ scale, color }) => (
@@ -112,11 +106,7 @@ const CloseX = ({ scale, color }) => (
     xmlns="http://www.w3.org/2000/svg"
     style={{ transform: `scale(${scale}, ${scale})` }}
   >
-    <path
-      stroke={color}
-      strokeWidth="2"
-      d="M1.293 20.293L20.516 1.07M1.293 1.707l19.223 19.224"
-    />
+    <path stroke={color} strokeWidth="2" d="M1.293 20.293L20.516 1.07M1.293 1.707l19.223 19.224" />
   </svg>
 )
 const ChevronsRight = ({ scale, color }) => (
@@ -127,13 +117,7 @@ const ChevronsRight = ({ scale, color }) => (
     xmlns="http://www.w3.org/2000/svg"
     style={{ transform: `scale(${scale}, ${scale})` }}
   >
-    <path
-      d="M13 17l5-5-5-5M6 17l5-5-5-5"
-      stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M13 17l5-5-5-5M6 17l5-5-5-5" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 const ChevronRight = ({ scale, color }) => (
@@ -144,13 +128,7 @@ const ChevronRight = ({ scale, color }) => (
     xmlns="http://www.w3.org/2000/svg"
     style={{ transform: `scale(${scale}, ${scale})` }}
   >
-    <path
-      d="M9 17.5l5-5-5-5"
-      stroke={color}
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M9 17.5l5-5-5-5" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 const Checkmark = ({ scale, color }) => (
@@ -178,13 +156,7 @@ const Barchart = ({ scale, color }) => (
     xmlns="http://www.w3.org/2000/svg"
     style={{ transform: `scale(${scale}, ${scale})` }}
   >
-    <path
-      d="M12 20V10M18 20V4M6 20v-4"
-      stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 20V10M18 20V4M6 20v-4" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 const Award = ({ scale, color }) => (
@@ -236,10 +208,36 @@ const Activity = ({ scale, color }) => (
     xmlns="http://www.w3.org/2000/svg"
     style={{ transform: `scale(${scale}, ${scale})` }}
   >
+    <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
+const Search = ({ scale, color }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    style={{ transform: `scale(${scale}, ${scale})` }}
+  >
+    <circle cx="11" cy="11" r="8" />
+    <path d="M21 21l-4.35-4.35" />
+  </svg>
+)
+const Star = ({ scale, color }) => (
+  <svg
+    width="11"
+    height="11"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ transform: `scale(${scale}, ${scale})` }}
+  >
     <path
-      d="M22 12h-4l-3 9L9 3l-3 9H2"
+      d="M8.846 2.346l-6.5 6.5M2.346 2.346l6.5 6.5M10.192 5.596H1M5.596 1v9.192"
       stroke={color}
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -280,11 +278,7 @@ const Logo = ({ scale }) => (
   </svg>
 )
 
-function Svg({
-  icon = 'ChevronRight',
-  scale = 1,
-  color = 'var(--orange-color)',
-} = {}) {
+function Svg({ icon = 'ChevronRight', scale = 1, color = 'var(--orange-color)' } = {}) {
   const components = {
     Send,
     Phone,
@@ -302,6 +296,8 @@ function Svg({
     Activity,
     Fax,
     Logo,
+    Star,
+    Search,
   }
 
   const Icon = components[icon]

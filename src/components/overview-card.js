@@ -72,8 +72,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
       color: 'var(--orange-color)',
       desc:
         'We manage your judgment portfolio through all phases of the process from locating the judgment to collecting the final payment.',
-      option:
-        'Best option if you have limited resources and staffing in your collection/special assets department.',
+      option: 'Best option if you have limited resources and staffing in your collection/special assets department.',
       link: '/we-manage/',
     },
     youManage: {
@@ -88,8 +87,7 @@ const OverviewCard = ({ type = 'weManage' }) => {
     wePurchase: {
       title: 'WE PURCHASE',
       color: 'var(--green-color)',
-      desc:
-        'We will purchase the portfolio of judgments you are selling at a negotiated market rate.',
+      desc: 'We will purchase the portfolio of judgments you are selling at a negotiated market rate.',
       option: 'Best option for fastest revenue realization.',
       link: '/we-purchase/',
     },
@@ -98,11 +96,11 @@ const OverviewCard = ({ type = 'weManage' }) => {
   function getIcon() {
     if (type === 'weManage') {
       return <Svg icon="Barchart" color={config[type].color} />
-    } else if (type === 'youManage') {
-      return <Svg icon="Activity" color={config[type].color} />
-    } else {
-      return <Svg icon="Dalla" color={config[type].color} />
     }
+    if (type === 'youManage') {
+      return <Svg icon="Activity" color={config[type].color} />
+    }
+    return <Svg icon="Dalla" color={config[type].color} />
   }
 
   return (

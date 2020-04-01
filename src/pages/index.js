@@ -38,11 +38,8 @@ const comparisonChart = css`
 
 const IndexPage = () => (
   <>
-    <SEO
-      title="Guaranty Solutions"
-      keywords={[`gatsby`, `application`, `react`]}
-    />
-    <Layout lightHeader={true}>
+    <SEO title="Guaranty Solutions" keywords={[`gatsby`, `application`, `react`]} />
+    <Layout lightHeader>
       <main style={{ margin: '0 auto' }}>
         <div css={tagLine} className="flex row center">
           <span>
@@ -60,7 +57,7 @@ const IndexPage = () => (
               margin: '50px 0px',
               textAlign: 'center',
               fontWeight: 300,
-              fontFamily: 'Montserrat, sans-serif'
+              fontFamily: 'Montserrat, sans-serif',
             }}
           >
             COMPARISON

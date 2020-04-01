@@ -687,6 +687,12 @@ pre tt:after {
 .center {
   justify-content: center;
 }
+.end {
+  justify-content: flex-end;
+}
+.alignCenter {
+  align-items: center;
+}
 
 @media only screen and (max-width: 480px) {
   html {

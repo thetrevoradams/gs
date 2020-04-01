@@ -41,27 +41,25 @@ const bulletStyles = css`
 const YouManage = () => (
   <Layout subNav="youManage">
     <SEO title="Overview - You Manage" />
-    <main className="textContainer" css={
-      css`
+    <main
+      className="textContainer"
+      css={css`
         h4 {
           margin-top: 50px;
-          font-family: 'Montserrat' sans-serif
+          font-family: 'Montserrat' sans-serif;
         }
-      `
-    }>
+      `}
+    >
       <h2 className="blueColor">Judgment Database</h2>
       <p>
-        No need to worry about convincing your IT group to approve and support a
-        new software. With the Guaranty Solutions Judgment Management System,
-        there is no software to install or maintain. Your judgment portfolio
-        will be completely hosted in the cloud in a secure encrypted online
-        database that will be available 24/7 to only those whom you choose to
-        provide with access.
+        No need to worry about convincing your IT group to approve and support a new software. With the Guaranty
+        Solutions Judgment Management System, there is no software to install or maintain. Your judgment portfolio will
+        be completely hosted in the cloud in a secure encrypted online database that will be available 24/7 to only
+        those whom you choose to provide with access.
       </p>
       <p>
-        Once you have entered the applicable information, each record will
-        contain all the information needed for a successful efficient collection
-        process, such as:
+        Once you have entered the applicable information, each record will contain all the information needed for a
+        successful efficient collection process, such as:
       </p>
 
       <h4>Judgment</h4>

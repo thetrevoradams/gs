@@ -7,9 +7,7 @@ const Success = () => (
     <SEO title="Contact Success" />
     <main className="textContainer">
       <h1>Submission Successful</h1>
-      <p>
-        Thank you for reaching out. We have recieved your form submisson and will reach out as soon as possible.
-      </p>
+      <p>Thank you for reaching out. We have recieved your form submisson and will reach out as soon as possible.</p>
     </main>
   </Layout>
 )

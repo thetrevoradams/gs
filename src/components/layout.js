@@ -15,8 +15,9 @@ import SubNav from './sub-nav'
 import Footer from './footer'
 import './layout.css'
 
-const getSubNavData = subNav => {
-  let links, navTitle
+const getSubNavData = (subNav) => {
+  let links
+  let navTitle
   switch (subNav) {
     case 'weManage':
       navTitle = 'We Manage'
@@ -100,7 +101,7 @@ const getSubNavData = subNav => {
       break
   }
 
-  return <SubNav navTitle={navTitle}>{links.map(link => link)}</SubNav>
+  return <SubNav navTitle={navTitle}>{links.map((link) => link)}</SubNav>
 }
 
 const Layout = ({ children, lightHeader = false, subNav }) => {
@@ -121,7 +122,7 @@ const Layout = ({ children, lightHeader = false, subNav }) => {
         onClose={toggleSidebar}
         className="sidebar"
       >
-        <Footer asSidebar={true} />
+        <Footer asSidebar />
       </SwipeableDrawer>
 
       <Header lightBackground={lightHeader} openSidebar={toggleSidebar} />

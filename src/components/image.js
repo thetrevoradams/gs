@@ -51,12 +51,9 @@ const Image = () => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <div css={overlay}>
-        <Img
-          fluid={data.skyscrappers.childImageSharp.fluid}
-          css={imageStyling}
-        />
+        <Img fluid={data.skyscrappers.childImageSharp.fluid} css={imageStyling} />
       </div>
     )}
   />

@@ -1,10 +1,10 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 import { Link } from 'gatsby'
-import Image from './image'
 import Popover from '@material-ui/core/Popover'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
+import Image from './image'
 import Svg from './svg'
 
 const headerStyles = css`
@@ -12,11 +12,7 @@ const headerStyles = css`
   color: #fdfdfd;
   font-size: 18px;
   height: calc(68vh - 127px);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.8) -9.48%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) -9.48%, rgba(0, 0, 0, 0) 100%);
 
   a,
   .popUp {
@@ -33,6 +29,28 @@ const subnavOptions = css`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  .separator:first-of-type {
+    margin-top: 12px;
+  }
+  .separator {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+  }
+  .separator::before {
+    margin-right: 0.5em;
+  }
+  .separator::after {
+    margin-left: 0.5em;
+  }
 
   a {
     display: flex;
@@ -160,10 +178,15 @@ const mobileLogo = css`
 const serviceContainer = css`
   display: flex;
 `
+const hoverOverride = css`
+  &:hover {
+    color: initial;
+  }
+`
 
 const Header = ({ lightBackground = false, openSidebar }) => {
-  let [subnavOpen, setSubnavOpen] = React.useState(false)
-  let [anchorEl, setAnchorEl] = React.useState(null)
+  const [subnavOpen, setSubnavOpen] = React.useState(false)
+  const [anchorEl, setAnchorEl] = React.useState(null)
   let styleOverride = { backgroundColor: 'initial' }
   if (!lightBackground) {
     styleOverride = {
@@ -172,24 +195,19 @@ const Header = ({ lightBackground = false, openSidebar }) => {
     }
   }
 
-  const openSubNav = e => {
+  const openSubNav = (e) => {
     if (e && e.currentTarget) {
       setAnchorEl(e.currentTarget)
       setSubnavOpen(true)
     }
   }
   const closeSubnav = () => {
-    console.log('closing')
     setSubnavOpen(false)
   }
   return (
     <header css={headerStyles} style={styleOverride}>
       <nav css={navStyles}>
-        <Link
-          to="/about-us"
-          css={[hideOnMobile, noLinkStyles]}
-          activeClassName="activeLink"
-        >
+        <Link to="/about-us" css={[hideOnMobile, noLinkStyles]} activeClassName="activeLink">
           <span>About</span>
         </Link>
         <div css={[serviceContainer, hideOnMobile]}>
@@ -199,6 +217,9 @@ const Header = ({ lightBackground = false, openSidebar }) => {
             className="popUp"
             onClick={openSubNav}
             onMouseEnter={openSubNav}
+            tabIndex={0}
+            role="button"
+            onKeyPress={(e) => (e.key === 'Enter' ? openSubNav(e) : '')}
           >
             Our Services
           </span>
@@ -217,17 +238,23 @@ const Header = ({ lightBackground = false, openSidebar }) => {
             disableRestoreFocus
           >
             <div css={subnavOptions} onMouseLeave={closeSubnav}>
-              <Link to="/we-manage" css={noLinkStyles}>
-                <Svg icon="Barchart" color={'var(--orange-color)'} />
+              <small className="separator">Judgments</small>
+              <Link to="/we-manage" css={[noLinkStyles, hoverOverride]}>
+                <Svg icon="Barchart" color="var(--orange-color)" />
                 <span className="orangeColor">We Manage</span>
               </Link>
-              <Link to="/you-manage" css={noLinkStyles}>
-                <Svg icon="Activity" color={'var(--blue-color)'} />
+              <Link to="/you-manage" css={[noLinkStyles, hoverOverride]}>
+                <Svg icon="Activity" color="var(--blue-color)" />
                 <span className="blueColor">You Manage</span>
               </Link>
-              <Link to="/we-purchase" css={noLinkStyles}>
-                <Svg icon="Dalla" color={'var(--green-color)'} />
+              <Link to="/we-purchase" css={[noLinkStyles, hoverOverride]}>
+                <Svg icon="Dalla" color="var(--green-color)" />
                 <span className="greenColor">We Purchase</span>
+              </Link>
+              <small className="separator">Research</small>
+              <Link to="/research" css={[noLinkStyles, hoverOverride]}>
+                <Svg icon="Search" color="#403a34" />
+                <span>Research</span>
               </Link>
             </div>
           </Popover>
@@ -235,18 +262,10 @@ const Header = ({ lightBackground = false, openSidebar }) => {
         <Link to="/" css={mobileLogo}>
           <Svg icon="Logo" />
         </Link>
-        <Link
-          to="/management/"
-          css={[hideOnMobile, noLinkStyles]}
-          activeClassName="activeLink"
-        >
+        <Link to="/management/" css={[hideOnMobile, noLinkStyles]} activeClassName="activeLink">
           <span>Management</span>
         </Link>
-        <Link
-          to="/contact"
-          css={[hideOnMobile, noLinkStyles]}
-          activeClassName="activeLink"
-        >
+        <Link to="/contact" css={[hideOnMobile, noLinkStyles]} activeClassName="activeLink">
           <span>Contact</span>
         </Link>
         <div
@@ -265,9 +284,7 @@ const Header = ({ lightBackground = false, openSidebar }) => {
           <Image imgName="skyscrappers" altText="sky scrappers" />
           <div css={heroTextContainer}>
             <h1>The Leading Expert</h1>
-            <h2 style={{ fontFamily: 'Montserrat' }}>
-              in Judgment Portfolio Management
-            </h2>
+            <h2 style={{ fontFamily: 'Montserrat' }}>in Judgment Portfolio Management</h2>
           </div>
         </>
       ) : null}

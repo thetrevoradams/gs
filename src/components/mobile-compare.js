@@ -143,14 +143,10 @@ const MobileCompare = () => {
             <div className="rowHeader">Judgment research and acquisition</div>
           </div>
           <div className="section border-top">
-            <div className="rowHeader">
-              Judgment expiration monitoring and renewal
-            </div>
+            <div className="rowHeader">Judgment expiration monitoring and renewal</div>
           </div>
           <div className="section border-top">
-            <div className="rowHeader">
-              Real and Personal Property Lien monitoring and renewal
-            </div>
+            <div className="rowHeader">Real and Personal Property Lien monitoring and renewal</div>
           </div>
 
           <div className="section border-top">
@@ -209,7 +205,7 @@ const MobileCompare = () => {
             </div>
             <div className="rowSub">
               <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />
-              Debtor's exams
+              Debtor&#39;s exams
             </div>
             <div className="rowSub">
               <Svg icon="ChevronsRight" color="#9F9C99" scale={0.8} />

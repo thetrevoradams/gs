@@ -12,10 +12,12 @@ import brian from '../images/Brian.png'
 import guy from '../images/Guy.jpg'
 import dustin from '../images/Dustin.jpg'
 import sam from '../images/Sam.png'
+import johnathan from '../images/Johnathan.png'
 import brianVcard from '../biographies/brian.vcf'
 import guyVcard from '../biographies/guy.vcf'
 import dustinVcard from '../biographies/dustin.vcf'
 import samVcard from '../biographies/sam.vcf'
+import johnathanVcard from '../biographies/johnathan.vcf'
 
 const title = css`
   text-align: center;
@@ -233,10 +235,10 @@ const Management = () => {
 
   function debounce(func, wait, immediate) {
     var timeout
-    return function() {
+    return function () {
       var context = this,
         args = arguments
-      var later = function() {
+      var later = function () {
         timeout = null
         if (!immediate) func.apply(context, args)
       }
@@ -398,10 +400,23 @@ const Management = () => {
             }}
             handleClick={openDialog}
           />
+          <LeadershipSpotlight
+            config={{
+              image: johnathan,
+              name: 'Johnathan Evans',
+              position: 'Debt Counselor',
+              bioName: 'johnathan',
+              phone: '480.924.6499',
+              fax: '480.240.4187',
+              email: 'jevans@guaranty-solutions.com',
+              vCard: johnathanVcard,
+            }}
+            handleClick={openDialog}
+          />
         </div>
 
         <p css={desc}>
-          Combined, our team has more than 70 years of experience in the
+          Combined, our team has more than 80 years of experience in the
           business of finance and law. Our team comprises professionals from
           accounting, law, private equity fund management, investments, and
           financial operations.

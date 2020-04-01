@@ -209,9 +209,7 @@ const Comparison = () => (
         </tr>
         <tr>
           <td>
-            <span className="rowHeader">
-              Judgment expiration monitoring and renewal
-            </span>
+            <span className="rowHeader">Judgment expiration monitoring and renewal</span>
           </td>
           <td>
             <Svg icon="Checkmark" color="var(--orange-color)" />
@@ -221,9 +219,7 @@ const Comparison = () => (
         </tr>
         <tr>
           <td>
-            <span className="rowHeader">
-              Real and personal property lien monitoring and renewal
-            </span>
+            <span className="rowHeader">Real and personal property lien monitoring and renewal</span>
           </td>
           <td>
             <Svg icon="Checkmark" color="var(--orange-color)" />

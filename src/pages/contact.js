@@ -79,8 +79,8 @@ const submitBtn = css`
   line-height: 1.75;
   min-width: 64px;
   border-radius: 4px;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 3px 1px -2px rgba(0, 0, 0, 0.12);
   font-weight: 500;
   border: none;
   letter-spacing: 0.02857em;
@@ -119,19 +119,13 @@ const contactLine = css`
   }
 `
 
-const Contact = ({ classes }) => (
+const Contact = () => (
   <Layout>
     <SEO title="Contact" />
     <main className="wideContainer">
       <h1>Contact</h1>
       <div css={pageLayout}>
-        <form
-          name="contact"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          action="/success"
-        >
+        <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
           <div css={inputContainer}>
             <input type="hidden" name="form-name" value="contact" />
             <TextField
@@ -192,9 +186,7 @@ const Contact = ({ classes }) => (
           <div css={contactLine}>
             <Svg icon="Email" color="#3194D2" />
             <span className="pointer">
-              <a href="mailto:info@guaranty-solutions.com">
-                info@guaranty-solutions.com
-              </a>
+              <a href="mailto:info@guaranty-solutions.com">info@guaranty-solutions.com</a>
             </span>
           </div>
         </div>

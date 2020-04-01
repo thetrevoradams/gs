@@ -53,7 +53,7 @@ const wrapper = css`
 const sidebarStyles = css`
   flex-direction: column;
   background-color: unset;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 
   .column {
     display: flex;
@@ -132,6 +132,9 @@ const Footer = ({ asSidebar = false }) => {
           <span>
             <Link to="/management/">Management</Link>
           </span>
+          <span>
+            <Link to="/research/">Research</Link>
+          </span>
         </div>
       </div>
       {asSidebar ? null : (
@@ -156,6 +159,9 @@ const Footer = ({ asSidebar = false }) => {
             </span>
             <span>
               <Link to="/management/">MANAGEMENT</Link>
+            </span>
+            <span>
+              <Link to="/research/">RESEARCH</Link>
             </span>
           </div>
         </div>
