@@ -1,13 +1,13 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 
+import Dialog from '@material-ui/core/Dialog'
+import { jsx, css } from '@emotion/core'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import LeadershipSpotlight from '../components/leadership-spotlight'
-import Dialog from '@material-ui/core/Dialog'
 import Svg from '../components/svg'
 import Bios from '../biographies/bios'
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core'
 import brian from '../images/Brian.png'
 import guy from '../images/Guy.jpg'
 import dustin from '../images/Dustin.jpg'
@@ -50,11 +50,7 @@ const bioOverlay = css`
   bottom: 0;
   height: 125px;
   width: calc(100% - 350px);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.9) 49.83%,
-    rgba(255, 255, 255, 0) 148.4%
-  );
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 49.83%, rgba(255, 255, 255, 0) 148.4%);
   transform: rotate(-180deg);
 `
 
@@ -216,7 +212,7 @@ const Management = () => {
     bioName: 'brian',
     phone: '480.924.6499',
     fax: '480.240.4187',
-    email: 'bevans@guaranty-solutions.com',
+    email: 'bevans@guarantysolutions.com',
     vCard: brianVcard,
   })
 
@@ -234,15 +230,15 @@ const Management = () => {
   }, [])
 
   function debounce(func, wait, immediate) {
-    var timeout
-    return function () {
-      var context = this,
-        args = arguments
-      var later = function () {
+    let timeout
+    return function() {
+      const context = this
+      const args = arguments
+      const later = function() {
         timeout = null
         if (!immediate) func.apply(context, args)
       }
-      var callNow = immediate && !timeout
+      const callNow = immediate && !timeout
       clearTimeout(timeout)
       timeout = setTimeout(later, wait)
       if (callNow) func.apply(context, args)
@@ -297,9 +293,7 @@ const Management = () => {
                   <Svg icon="Phone" color="#3194D2" scale={0.8} />
                 </span>
                 <span>
-                  <a href={`tel:${config.phone.split('.').join('-')}`}>
-                    {config.phone}
-                  </a>
+                  <a href={`tel:${config.phone.split('.').join('-')}`}>{config.phone}</a>
                 </span>
               </div>
               <div>
@@ -342,10 +336,7 @@ const Management = () => {
       </Dialog>
       <main className="textContainer">
         <h1 css={title}>Management</h1>
-        <p css={sub}>
-          The integrity of our processes reflects the professionalism and
-          standards of our team.
-        </p>
+        <p css={sub}>The integrity of our processes reflects the professionalism and standards of our team.</p>
 
         <div css={grid}>
           <LeadershipSpotlight
@@ -356,7 +347,7 @@ const Management = () => {
               bioName: 'brian',
               phone: '480.924.6499',
               fax: '480.240.4187',
-              email: 'bevans@guaranty-solutions.com',
+              email: 'bevans@guarantysolutions.com',
               vCard: brianVcard,
             }}
             handleClick={openDialog}
@@ -369,7 +360,7 @@ const Management = () => {
               bioName: 'guy',
               phone: '480.924.6499',
               fax: '480.240.4187',
-              email: 'gadams@guaranty-solutions.com',
+              email: 'gadams@guarantysolutions.com',
               vCard: guyVcard,
             }}
             handleClick={openDialog}
@@ -382,7 +373,7 @@ const Management = () => {
               bioName: 'dustin',
               phone: '480.924.6499',
               fax: '480.240.4187',
-              email: 'dhorne@guaranty-solutions.com',
+              email: 'dhorne@guarantysolutions.com',
               vCard: dustinVcard,
             }}
             handleClick={openDialog}
@@ -395,7 +386,7 @@ const Management = () => {
               bioName: 'sam',
               phone: '480.924.6499',
               fax: '480.240.4187',
-              email: 'slewis@guaranty-solutions.com',
+              email: 'slewis@guarantysolutions.com',
               vCard: samVcard,
             }}
             handleClick={openDialog}
@@ -408,7 +399,7 @@ const Management = () => {
               bioName: 'johnathan',
               phone: '480.924.6499',
               fax: '480.240.4187',
-              email: 'jevans@guaranty-solutions.com',
+              email: 'jevans@guarantysolutions.com',
               vCard: johnathanVcard,
             }}
             handleClick={openDialog}
@@ -416,16 +407,13 @@ const Management = () => {
         </div>
 
         <p css={desc}>
-          Combined, our team has more than 80 years of experience in the
-          business of finance and law. Our team comprises professionals from
-          accounting, law, private equity fund management, investments, and
-          financial operations.
+          Combined, our team has more than 80 years of experience in the business of finance and law. Our team comprises
+          professionals from accounting, law, private equity fund management, investments, and financial operations.
         </p>
         <p css={desc}>
-          We understand your business and the business of your clients. Our
-          promise to you is a professional interaction of trust and intelligence
-          in finding solutions. Our clients find us forthright and capable at
-          deploying the appropriate customized solutions for your needs.
+          We understand your business and the business of your clients. Our promise to you is a professional interaction
+          of trust and intelligence in finding solutions. Our clients find us forthright and capable at deploying the
+          appropriate customized solutions for your needs.
         </p>
       </main>
     </Layout>

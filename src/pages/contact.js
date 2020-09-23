@@ -186,7 +186,7 @@ const Contact = () => (
           <div css={contactLine}>
             <Svg icon="Email" color="#3194D2" />
             <span className="pointer">
-              <a href="mailto:info@guaranty-solutions.com">info@guaranty-solutions.com</a>
+              <a href="mailto:info@guarantysolutions.com">info@guarantysolutions.com</a>
             </span>
           </div>
         </div>
