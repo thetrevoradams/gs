@@ -4,6 +4,9 @@
   "description": "A Guaranty Solutions website",
   "version": "1.0.1",
   "author": "Trevor Adams, Chad Eddington",
+  "engines": {
+    "node": ">=14"
+},
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "gatsby": "^2.20.8",
