@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-300.woff2')  format('woff2'),
+      url('/fonts/montserrat-300.woff')  format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/Butler-Bold.woff2')  format('woff2'),
+      url('/fonts/Butler-Bold.woff')  format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
