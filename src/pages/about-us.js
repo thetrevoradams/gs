@@ -31,7 +31,7 @@ const AboutUs = () => (
       <h1>About Us</h1>
       <p>
         Following the economic crisis of 2008, there was significant consolidation in the banking sector. As banks began
-        managing the assets of a newly acquired institutions the focus was almost always on the real estate. Very few,
+        managing the assets of newly acquired institutions, the focus was almost always on the real estate. Very few,
         if any institutions, focused on the judgments that were part of the acquired banks portfolio. Even more than a
         decade later, most institutions are aware of only a fraction of the judgments actually held in their name or in
         the name of an acquired institution. Unfortunately, this lack of awareness is resulting in millions of dollars

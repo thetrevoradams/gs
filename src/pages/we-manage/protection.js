@@ -32,7 +32,7 @@ const WeProtection = () => (
       </p>
       <p>
         Even when an institution is aware of a judgment, they frequently rely
-        almost entirely of the tickler system of the law firm used to obtain the
+        almost entirely on the tickler system of the law firm used to obtain the
         original judgment to notify them of expiring judgments. This approach is
         far from comprehensive frequently resulting in expired judgments and
         lost revenue. The problem is compounded when you acquire the assets of

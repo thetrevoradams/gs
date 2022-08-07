@@ -46,16 +46,16 @@ const WeMaximize = () => (
       <h2 className="orangeColor">Maximizing Your Portfolio Value</h2>
       <p>
         Guaranty Solutions is an information company. We have not only the
-        expertise to find, locate and manage your judgments but to uncover the
+        expertise to find, locate and manage your judgments, but to uncover the
         critical information about your debtors that can truly impact the amount
         collected. We employ information professionals who have previously
-        trained the FBI, IRS and numerous other agencies and legal professionals
+        trained the FBI, IRS, numerous other agencies and legal professionals
         to uncover hidden assets. Their expertise is now utilized to help our
         clients obtain the best possible collection results.
       </p>
       <p>
         Upon engagement, Guaranty Solutions will underwrite each identified
-        debtor identifying the debtor’s strength or weakness in each of these
+        debtor, identifying the debtor’s strength or weakness in each of these
         categories:
       </p>
       <div css={bulletTopContainer}>

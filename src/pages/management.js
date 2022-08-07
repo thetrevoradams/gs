@@ -9,11 +9,13 @@ import Svg from '../components/svg'
 import Bios from '../biographies/bios'
 /** @jsx jsx */
 import brian from '../images/Brian.png'
+import brandon from '../images/Brandon.png'
 import guy from '../images/Guy.jpg'
 import dustin from '../images/Dustin.jpg'
 import sam from '../images/Sam.png'
 import johnathan from '../images/Johnathan.png'
 import brianVcard from '../biographies/brian.vcf'
+import brandonVcard from '../biographies/brandon.vcf'
 import guyVcard from '../biographies/guy.vcf'
 import dustinVcard from '../biographies/dustin.vcf'
 import samVcard from '../biographies/sam.vcf'
@@ -388,6 +390,19 @@ const Management = () => {
               fax: '480.240.4187',
               email: 'slewis@guarantysolutions.com',
               vCard: samVcard,
+            }}
+            handleClick={openDialog}
+          />
+          <LeadershipSpotlight
+            config={{
+              image: brandon,
+              name: 'Brandon Lewis',
+              position: 'Head of Forensic Accounting',
+              bioName: 'brandon',
+              phone: '480.924.6499',
+              fax: '480.240.4187',
+              email: 'blewis@guarantysolutions.com',
+              vCard: brandonVcard,
             }}
             handleClick={openDialog}
           />
